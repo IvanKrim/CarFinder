@@ -13,7 +13,5 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9538531899, green: 0.9695010781, blue: 0.9060884118, alpha: 1)
     }
-    //comment
-
 }
 
