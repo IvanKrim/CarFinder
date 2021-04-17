@@ -21,6 +21,10 @@ class MainViewController: UIViewController {
     // test
     
     // another comment
+    
+    func artem2() -> Int {
+        2
+    }
 
 }
 
