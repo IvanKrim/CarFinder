@@ -8,22 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Войдите, чтобы приступить к поиску автомобиля вашей мечты!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-ki-PS1">
-                                <rect key="frame" x="16" y="352" width="288" height="41"/>
+                                <rect key="frame" x="16" y="632" width="568" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIi-F1-66A">
-                                <rect key="frame" x="16" y="463" width="288" height="45"/>
+                                <rect key="frame" x="16" y="495" width="568" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="H5H-96-pce"/>
@@ -36,13 +36,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchIMG" translatesAutoresizingMaskIntoConstraints="NO" id="muc-tH-8sJ">
-                                <rect key="frame" x="52" y="122" width="216" height="216"/>
+                                <rect key="frame" x="52" y="122" width="496" height="496"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="muc-tH-8sJ" secondAttribute="height" multiplier="1:1" id="O67-Yb-sKN"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="090-nn-rCc">
-                                <rect key="frame" x="65" y="60" width="190.5" height="54"/>
+                                <rect key="frame" x="205" y="60" width="190.5" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Купи" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-YD-gEM">
                                         <rect key="frame" x="0.0" y="0.0" width="107.5" height="54"/>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="2083" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Filter View Controller-->
         <scene sceneID="M6L-un-VgF">
             <objects>
-                <viewController id="zI1-4h-CGE" sceneMemberID="viewController">
+                <viewController id="zI1-4h-CGE" customClass="FilterViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="On8-t4-XBL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,7 +202,7 @@
         <!--N предложений-->
         <scene sceneID="UcA-kz-alk">
             <objects>
-                <tableViewController id="AMc-fA-76u" sceneMemberID="viewController">
+                <tableViewController id="AMc-fA-76u" customClass="FindWindowTableViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Gc-5J-Lq4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,10 +282,10 @@
             </objects>
             <point key="canvasLocation" x="3482" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Jjg-zE-7o7">
             <objects>
-                <viewController id="5qF-uo-pFj" sceneMemberID="viewController">
+                <viewController id="5qF-uo-pFj" customClass="DetailViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0nG-bF-MaI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -412,10 +412,10 @@
             </objects>
             <point key="canvasLocation" x="4294" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Reserve View Controller-->
         <scene sceneID="p89-Lh-Kc9">
             <objects>
-                <viewController id="Q0k-he-T6V" sceneMemberID="viewController">
+                <viewController id="Q0k-he-T6V" customClass="ReserveViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PFI-Np-P2B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
