@@ -13,6 +13,7 @@
 		0E863A7B262A2F7D00027776 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E863A79262A2F7D00027776 /* Main.storyboard */; };
 		0E863A7D262A2F7E00027776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E863A7C262A2F7E00027776 /* Assets.xcassets */; };
 		0E863A80262A2F7E00027776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E863A7E262A2F7E00027776 /* LaunchScreen.storyboard */; };
+		0E863AB4262B81B300027776 /* ServiceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E863AB3262B81B300027776 /* ServiceDataManager.swift */; };
 		C4846F07262A372B00309036 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4846F06262A372B00309036 /* Models.swift */; };
 		C48FD3E2262AD892003C7AF5 /* FindWindowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FD3E1262AD892003C7AF5 /* FindWindowTableViewController.swift */; };
 		C48FD3E5262ADA97003C7AF5 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FD3E4262ADA97003C7AF5 /* FilterViewController.swift */; };
@@ -30,6 +31,7 @@
 		0E863A7C262A2F7E00027776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E863A7F262A2F7E00027776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E863A81262A2F7E00027776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E863AB3262B81B300027776 /* ServiceDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDataManager.swift; sourceTree = "<group>"; };
 		C4846F06262A372B00309036 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		C48FD3E1262AD892003C7AF5 /* FindWindowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWindowTableViewController.swift; sourceTree = "<group>"; };
 		C48FD3E4262ADA97003C7AF5 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 		0E863A72262A2F7D00027776 /* CarFinder */ = {
 			isa = PBXGroup;
 			children = (
+				C4846F06262A372B00309036 /* Models.swift */,
+				0E863AB3262B81B300027776 /* ServiceDataManager.swift */,
 				0E863A73262A2F7D00027776 /* AppDelegate.swift */,
 				0E863A75262A2F7D00027776 /* SceneDelegate.swift */,
 				F7A67D05262B444800349F5F /* DataManager.swift */,
@@ -80,7 +84,6 @@
 				0E863A7C262A2F7E00027776 /* Assets.xcassets */,
 				0E863A7E262A2F7E00027776 /* LaunchScreen.storyboard */,
 				0E863A81262A2F7E00027776 /* Info.plist */,
-				C4846F06262A372B00309036 /* Models.swift */,
 			);
 			path = CarFinder;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				0E863A74262A2F7D00027776 /* AppDelegate.swift in Sources */,
 				0E863A76262A2F7D00027776 /* SceneDelegate.swift in Sources */,
 				C4846F07262A372B00309036 /* Models.swift in Sources */,
+				0E863AB4262B81B300027776 /* ServiceDataManager.swift in Sources */,
 				F7A67D06262B444800349F5F /* DataManager.swift in Sources */,
 				C48FD3E8262ADBD6003C7AF5 /* DetailViewController.swift in Sources */,
 			);
