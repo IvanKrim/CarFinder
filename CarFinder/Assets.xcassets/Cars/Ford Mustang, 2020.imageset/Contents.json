@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "Ford Mustang, 2020.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

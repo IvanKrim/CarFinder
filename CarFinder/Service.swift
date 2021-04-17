@@ -5,6 +5,20 @@
 //  Created by Юрий Чекалюк on 17.04.2021.
 //
 
-struct DataManager {
+class DataManager {
+    let carModel = [
+    "Audi A4", "BMW 3", "Mercedes-Benz E-class", "Mazda 6", "Ford Mustang"
+    ]
     
+    let yearOfCarManufacture = [
+        "2020", "2020", "2019", "2020", "2020"
+    ]
+    
+    let carColor = [
+    "Синий", "Белый", "Белый", "Красный", "Синий"
+    ]
+    
+    let carEngine = [
+    "Бензин", "Дизель"
+    ]
 }
