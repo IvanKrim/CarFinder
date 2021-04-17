@@ -68,6 +68,8 @@
 			children = (
 				0E863A73262A2F7D00027776 /* AppDelegate.swift */,
 				0E863A75262A2F7D00027776 /* SceneDelegate.swift */,
+				0E863A77262A2F7D00027776 /* ViewController.swift */,
+				C48FD3DC262AD0AC003C7AF5 /* Service.swift */,
 				0E863A79262A2F7D00027776 /* Main.storyboard */,
 				0E863A77262A2F7D00027776 /* MainViewController.swift */,
 				C48FD3E1262AD892003C7AF5 /* FindWindowTableViewController.swift */,
@@ -157,6 +159,7 @@
 				0E863A78262A2F7D00027776 /* MainViewController.swift in Sources */,
 				C48FD3E2262AD892003C7AF5 /* FindWindowTableViewController.swift in Sources */,
 				0E863A74262A2F7D00027776 /* AppDelegate.swift in Sources */,
+				C48FD3DD262AD0AC003C7AF5 /* Service.swift in Sources */,
 				0E863A76262A2F7D00027776 /* SceneDelegate.swift in Sources */,
 				C4846F07262A372B00309036 /* Models.swift in Sources */,
 				C48FD3E8262ADBD6003C7AF5 /* DetailViewController.swift in Sources */,
