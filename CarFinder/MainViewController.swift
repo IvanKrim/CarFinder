@@ -18,9 +18,7 @@ class MainViewController: UIViewController {
         1
     }
     
-    // test
     
-    // another comment
 
 }
 
