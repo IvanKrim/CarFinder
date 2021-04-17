@@ -9,6 +9,10 @@ import UIKit
 
 class FindWindowTableViewController: UITableViewController {
 
+    //MARK: - Public Properties
+    var car: Car!
+
+    //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.7496516109, green: 0.8531972766, blue: 0.9390820265, alpha: 1)

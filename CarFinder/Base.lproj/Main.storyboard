@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Войдите, чтобы приступить к поиску автомобиля вашей мечты!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbi-ki-PS1">
-                                <rect key="frame" x="16" y="632" width="568" height="20.5"/>
+                                <rect key="frame" x="16" y="352" width="288" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIi-F1-66A">
-                                <rect key="frame" x="16" y="495" width="568" height="45"/>
+                                <rect key="frame" x="16" y="463" width="288" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="H5H-96-pce"/>
@@ -36,13 +36,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchIMG" translatesAutoresizingMaskIntoConstraints="NO" id="muc-tH-8sJ">
-                                <rect key="frame" x="52" y="122" width="496" height="496"/>
+                                <rect key="frame" x="52" y="122" width="216" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="muc-tH-8sJ" secondAttribute="height" multiplier="1:1" id="O67-Yb-sKN"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="090-nn-rCc">
-                                <rect key="frame" x="205" y="60" width="190.5" height="54"/>
+                                <rect key="frame" x="65" y="60" width="190.5" height="54"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Купи" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIn-YD-gEM">
                                         <rect key="frame" x="0.0" y="0.0" width="107.5" height="54"/>
@@ -407,6 +407,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Yq-Zi-PzO"/>
+                    <connections>
+                        <outlet property="carColorLabel" destination="fmg-CD-Cri" id="mBa-Ww-5AP"/>
+                        <outlet property="carEngineLabel" destination="Asp-fa-rDp" id="foU-eI-oAr"/>
+                        <outlet property="carModelLabel" destination="zkZ-7l-GNu" id="Wfp-zl-buq"/>
+                        <outlet property="carPriceLabel" destination="lYf-MJ-dxy" id="fM5-sg-XVP"/>
+                        <outlet property="yearOfCarManufactureLabel" destination="aYN-fa-Y6N" id="2on-y8-nvk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHB-H6-2K3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -492,15 +499,18 @@
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="uxh-eG-gSS" secondAttribute="trailing" constant="16" id="sp3-So-Ame"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carModelLabel" destination="F2s-cg-4zO" id="jOB-2w-RhC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-VW-w4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4999" y="72"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="KUQ-se-INH">
             <objects>
-                <navigationController id="OCO-oV-BrB" sceneMemberID="viewController">
+                <navigationController id="OCO-oV-BrB" customClass="NavigationViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XEU-up-cVh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ta6-f9-blw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
