@@ -10,7 +10,8 @@ import UIKit
 class MainViewController: UIViewController {
     
     //MARK: - Private Properties
-    private let car = Car.getCarInfo()
+    
+    private let listOfCars = Car.getCarInfo()
     
     //MARK: - Override Methods
     override func viewDidLoad() {
@@ -19,8 +20,14 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tableViewController = segue.destination as? FindWindowTableViewController else { return }
-        tableViewController.car = car
+        // передаю массив через navigation controller на findwindow controller
+        
+        
+        guard let navigationVC = segue.destination as? NavigationViewController else { return }
+        
+        let findWindowTableVC = navigationVC.topViewController as! FindWindowTableViewController
+        findWindowTableVC.listOfCars = listOfCars
+        
     }
     
 }

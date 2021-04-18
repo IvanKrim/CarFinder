@@ -19,20 +19,28 @@ struct Car {
     }
     
     //MARK: Данные заказчика(имя и номер телефона)
-    let customerName: String
-    let customerPhoneNumber: String
+    // пока здесь закоментил, данных заказчика, по-моему, не должно быть в этой модели
+//    let customerName: String
+//    let customerPhoneNumber: String
     
-    //MARK: Данные в методе пока захардхожены, далее зададим из ДатаМенеджера.
-    static func getCarInfo() -> Car {
-        Car(
-            carModel: "Модель",
-            carColor: "Цвет",
-            carEngine: "Двигатель",
-            yearOfCarManufacture: "2000",
-            carPrice: "1890000",
-            customerName: "Имя",
-            customerPhoneNumber: "Номер телефона"
-        )
+    // инициализатор модели - возвращает массив с элементами типа Car
+    static func getCarInfo() -> [Car] {
+        
+        var listOfCars: [Car] = []
+        
+        for index in 0..<DataManager.shared.carModels.count {
+            
+            let car = Car(
+                carModel: DataManager.shared.carModels[index],
+                carColor: DataManager.shared.carColors[index],
+                carEngine: DataManager.shared.carEngines.randomElement() ?? "",
+                yearOfCarManufacture: DataManager.shared.yearsOfCarManufacture[index],
+                carPrice: DataManager.shared.carPrices[index]
+            )
+            
+            listOfCars.append(car)
+        }
+        return listOfCars
     }
 }
 
