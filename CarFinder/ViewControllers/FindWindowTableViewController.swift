@@ -8,37 +8,51 @@
 import UIKit
 
 class FindWindowTableViewController: UITableViewController {
+    
+    //MARK: - IB Outlets
+    @IBOutlet weak var carNameYearLabel: UILabel!
+    @IBOutlet weak var carColorLabel: UILabel!
+    @IBOutlet weak var carPriceLabel: UILabel!
+    
 
     //MARK: - Public Properties
-    var car: Car!
+    
+    var listOfCars: [Car]!
 
     //MARK: - Override Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.7496516109, green: 0.8531972766, blue: 0.9390820265, alpha: 1)
+        
+        print(listOfCars.count)
+        
+        
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    // задаем количество строк в списке по количеству элементов в массиве
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        listOfCars.count
     }
 
-    /*
+    // настраиваем ячейку
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        
+        // создаем экземпляр ячейки нашего кастомного класса
+        let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath) as! CarInfoTableViewCell
+        
+        // получаем из массива нужный элемент для каждой ячейки по indexPath(по номеру) для каждой строки
+        let car = listOfCars[indexPath.row]
+        
+        cell.nameYearLabel.text = car.fullVehicleInformation
+        cell.colorLabel.text = car.carColor
+        cell.priceLabel.text = car.carPrice
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
