@@ -17,13 +17,7 @@ class NavigationViewController: UINavigationController {
         super.viewDidLoad()
 }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // здесь исправил название переменной по короткому названию viewcontroller
-        
-//        guard let findWindowTableVC = segue.destination as? FindWindowTableViewController else { return }
-//
-//        findWindowTableVC.listOfCars = listOfCars
-        
-        
+       
     }
     
 }
