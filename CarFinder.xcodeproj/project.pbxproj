@@ -20,6 +20,7 @@
 		C48FD3E5262ADA97003C7AF5 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FD3E4262ADA97003C7AF5 /* FilterViewController.swift */; };
 		C48FD3E8262ADBD6003C7AF5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FD3E7262ADBD6003C7AF5 /* DetailViewController.swift */; };
 		C48FD3EB262ADC58003C7AF5 /* ReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FD3EA262ADC58003C7AF5 /* ReserveViewController.swift */; };
+		F7A67D1E262C813600349F5F /* CarInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A67D1D262C813600349F5F /* CarInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C48FD3E4262ADA97003C7AF5 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		C48FD3E7262ADBD6003C7AF5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C48FD3EA262ADC58003C7AF5 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
+		F7A67D1D262C813600349F5F /* CarInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				0E863AB3262B81B300027776 /* ServiceDataManager.swift */,
 				C4846F06262A372B00309036 /* Models.swift */,
+				F7A67D1D262C813600349F5F /* CarInfoTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				0E863A78262A2F7D00027776 /* MainViewController.swift in Sources */,
 				C48FD3E2262AD892003C7AF5 /* FindWindowTableViewController.swift in Sources */,
 				0E863A74262A2F7D00027776 /* AppDelegate.swift in Sources */,
+				F7A67D1E262C813600349F5F /* CarInfoTableViewCell.swift in Sources */,
 				0E863A76262A2F7D00027776 /* SceneDelegate.swift in Sources */,
 				C4846F07262A372B00309036 /* Models.swift in Sources */,
 				0E863AB4262B81B300027776 /* ServiceDataManager.swift in Sources */,

@@ -27,19 +27,28 @@ class FindWindowTableViewController: UITableViewController {
         
         print(listOfCars.count)
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "car")
+        
     }
 
     // MARK: - Table view data source
-
+    // задаем количество строк в списке по количеству элементов в массиве
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         listOfCars.count
     }
 
-    
+    // настраиваем ячейку
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "car", for: indexPath)
+        // создаем экземпляр ячейки нашего кастомного класса
+        let cell = tableView.dequeueReusableCell(withIdentifier: "carCell", for: indexPath) as! CarInfoTableViewCell
+        
+        // получаем из массива нужный элемент для каждой ячейки по indexPath(по номеру) для каждой строки
+        let car = listOfCars[indexPath.row]
+        
+        cell.nameYearLabel.text = car.fullVehicleInformation
+        cell.colorLabel.text = car.carColor
+        cell.priceLabel.text = car.carPrice
+        
 
         return cell
     }
