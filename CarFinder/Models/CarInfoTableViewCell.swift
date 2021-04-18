@@ -7,23 +7,22 @@
 
 import UIKit
 
+// здесь кастомный класс для нашей ячейки
+
 class CarInfoTableViewCell: UITableViewCell {
+    
+    // аутлеты для лейблов внутри ячейки
 
     @IBOutlet weak var nameYearLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    // функция передающая свойства экземпляра в тектовые поля аутлетов, принимает объект с типом модели
+    func cellSetup(object: Car) {
+        
+        self.nameYearLabel.text = object.fullVehicleInformation
+        self.colorLabel.text = object.carColor
+        self.priceLabel.text = object.carPrice
     }
 
 }
