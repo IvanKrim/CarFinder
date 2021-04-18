@@ -215,49 +215,38 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ilR-Ld-FJL">
-                                            <rect key="frame" x="16" y="8" width="288" height="43"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HGL-C5-TKq">
+                                            <rect key="frame" x="16" y="8" width="129" height="43"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HGL-C5-TKq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="43"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название и год авто" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYf-jZ-UEZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="171" height="25"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цвет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c00-kv-A7L">
-                                                            <rect key="frame" x="0.0" y="25" width="171" height="18"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="18" id="mYa-gu-MVF"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Цена" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-T7-58b">
-                                                    <rect key="frame" x="181" y="0.0" width="107" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Название и год авто" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYf-jZ-UEZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="цвет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c00-kv-A7L">
+                                                    <rect key="frame" x="0.0" y="25" width="129" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="HGL-C5-TKq" firstAttribute="leading" secondItem="ilR-Ld-FJL" secondAttribute="leading" id="AiO-Nh-aVi"/>
-                                                <constraint firstAttribute="bottom" secondItem="HGL-C5-TKq" secondAttribute="bottom" id="GSH-1j-wDL"/>
-                                                <constraint firstItem="HGL-C5-TKq" firstAttribute="top" secondItem="ilR-Ld-FJL" secondAttribute="top" id="qzd-F3-8cN"/>
-                                                <constraint firstItem="QeL-T7-58b" firstAttribute="leading" secondItem="HGL-C5-TKq" secondAttribute="trailing" constant="10" id="sB6-Gu-NC0"/>
-                                            </constraints>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Цена" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-T7-58b">
+                                            <rect key="frame" x="155" y="8" width="149" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ilR-Ld-FJL" firstAttribute="top" secondItem="S9i-De-tJh" secondAttribute="top" constant="8" id="9Ae-1e-P6Z"/>
-                                        <constraint firstItem="ilR-Ld-FJL" firstAttribute="leading" secondItem="S9i-De-tJh" secondAttribute="leading" constant="16" id="OKJ-HM-zNr"/>
-                                        <constraint firstAttribute="trailing" secondItem="ilR-Ld-FJL" secondAttribute="trailing" constant="16" id="fbb-XU-Q8H"/>
-                                        <constraint firstAttribute="bottom" secondItem="ilR-Ld-FJL" secondAttribute="bottom" constant="8" id="kp8-3s-jmb"/>
+                                        <constraint firstAttribute="bottom" secondItem="HGL-C5-TKq" secondAttribute="bottom" constant="8" id="Apq-ot-jrU"/>
+                                        <constraint firstAttribute="trailing" secondItem="QeL-T7-58b" secondAttribute="trailing" constant="16" id="CTo-Tf-TE0"/>
+                                        <constraint firstItem="QeL-T7-58b" firstAttribute="top" secondItem="S9i-De-tJh" secondAttribute="top" constant="8" id="S2e-C1-Uuv"/>
+                                        <constraint firstItem="HGL-C5-TKq" firstAttribute="top" secondItem="S9i-De-tJh" secondAttribute="top" constant="8" id="cG3-ex-biT"/>
+                                        <constraint firstItem="HGL-C5-TKq" firstAttribute="leading" secondItem="S9i-De-tJh" secondAttribute="leading" constant="16" id="cZF-Jw-qCh"/>
+                                        <constraint firstAttribute="bottom" secondItem="QeL-T7-58b" secondAttribute="bottom" constant="8" id="lSU-Ax-xu3"/>
+                                        <constraint firstItem="QeL-T7-58b" firstAttribute="leading" secondItem="HGL-C5-TKq" secondAttribute="trailing" constant="10" id="t7W-sY-ydl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
