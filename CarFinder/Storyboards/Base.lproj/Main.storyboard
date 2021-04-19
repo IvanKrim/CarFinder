@@ -264,6 +264,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="N предложений" id="eiv-cJ-IIJ">
+                        <barButtonItem key="leftBarButtonItem" title="Корзина" image="heart" catalog="system" id="bhK-Mv-6eV">
+                            <connections>
+                                <segue destination="tgS-z3-ou8" kind="show" id="4pR-0D-cBy"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="bZk-Iz-7bJ">
                             <connections>
                                 <segue destination="zI1-4h-CGE" kind="presentation" id="e60-Ic-m0l"/>
@@ -506,50 +511,22 @@
             </objects>
             <point key="canvasLocation" x="5138" y="72"/>
         </scene>
-        <!--Корзина-->
-        <scene sceneID="i6r-JW-j8E">
-            <objects>
-                <tableViewController id="9aA-sD-Z8Z" customClass="CartTVC" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UdN-L8-o7y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KAF-IW-mr2">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KAF-IW-mr2" id="7vx-4O-4Mg">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="9aA-sD-Z8Z" id="Fys-Gu-raK"/>
-                            <outlet property="delegate" destination="9aA-sD-Z8Z" id="AJH-Od-UfG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Корзина" id="pao-9J-DIa"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xq-aH-MIo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5934" y="771"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ptZ-aG-Ofq">
             <objects>
                 <navigationController id="tgS-z3-ou8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="tUc-vW-6Gq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="x8i-me-hbh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="9aA-sD-Z8Z" kind="relationship" relationship="rootViewController" id="Ogb-kq-lDJ"/>
+                        <segue destination="O4X-js-fZe" kind="relationship" relationship="rootViewController" id="Vno-dF-BsW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3A-Ip-d11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5138" y="772"/>
+            <point key="canvasLocation" x="3546" y="927"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="KUQ-se-INH">
@@ -568,9 +545,81 @@
             </objects>
             <point key="canvasLocation" x="2826" y="72"/>
         </scene>
+        <!--N предложений-->
+        <scene sceneID="EiC-1d-Q8F">
+            <objects>
+                <tableViewController id="O4X-js-fZe" customClass="CartTVC" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wcv-4Y-GxJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cartCell" rowHeight="59" id="hcm-7d-0g1" customClass="CartTableViewCell" customModule="CarFinder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="59"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcm-7d-0g1" id="84T-Eo-Q6l">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="mnN-dE-Skf">
+                                            <rect key="frame" x="16" y="8" width="145.5" height="43"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название и год авто" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4W2-gs-I2n">
+                                                    <rect key="frame" x="0.0" y="0.0" width="145.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цвет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQ0-s9-w9N">
+                                                    <rect key="frame" x="0.0" y="25" width="145.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Цена" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uei-Q6-hcd">
+                                            <rect key="frame" x="171.5" y="8" width="132.5" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Uei-Q6-hcd" firstAttribute="top" secondItem="84T-Eo-Q6l" secondAttribute="top" constant="8" id="36L-gz-Ahj"/>
+                                        <constraint firstItem="mnN-dE-Skf" firstAttribute="top" secondItem="84T-Eo-Q6l" secondAttribute="top" constant="8" id="4Vm-Q6-Vpn"/>
+                                        <constraint firstItem="Uei-Q6-hcd" firstAttribute="leading" secondItem="mnN-dE-Skf" secondAttribute="trailing" constant="10" id="DyH-o0-EHl"/>
+                                        <constraint firstAttribute="trailing" secondItem="Uei-Q6-hcd" secondAttribute="trailing" constant="16" id="ckl-mr-gRu"/>
+                                        <constraint firstAttribute="bottom" secondItem="Uei-Q6-hcd" secondAttribute="bottom" constant="8" id="dO2-hN-AeF"/>
+                                        <constraint firstAttribute="bottom" secondItem="mnN-dE-Skf" secondAttribute="bottom" constant="8" id="f8m-mm-lQa"/>
+                                        <constraint firstItem="mnN-dE-Skf" firstAttribute="leading" secondItem="84T-Eo-Q6l" secondAttribute="leading" constant="16" id="kV2-gc-HEk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="carColorLabel" destination="vQ0-s9-w9N" id="BcN-mt-Rh7"/>
+                                    <outlet property="carPriceLabel" destination="Uei-Q6-hcd" id="plh-VV-Otl"/>
+                                    <outlet property="nameYearLabel" destination="4W2-gs-I2n" id="PfT-Id-opB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="O4X-js-fZe" id="3YE-NN-5L8"/>
+                            <outlet property="delegate" destination="O4X-js-fZe" id="Hko-Px-mxW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="N предложений" id="ruf-Wj-peH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DgP-BH-LMf"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqX-t0-A2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4367" y="926"/>
+        </scene>
     </scenes>
     <resources>
         <image name="SearchIMG" width="741" height="741"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -42,3 +42,8 @@ struct Car {
     }
 }
 
+
+struct Cart {
+    var carModel: String
+    var carColor: String
+}
