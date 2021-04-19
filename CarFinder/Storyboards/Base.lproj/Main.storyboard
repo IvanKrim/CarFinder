@@ -216,16 +216,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HGL-C5-TKq">
-                                            <rect key="frame" x="16" y="8" width="129" height="43"/>
+                                            <rect key="frame" x="16" y="8" width="145.5" height="43"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название и год авто" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYf-jZ-UEZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="145.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цвет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c00-kv-A7L">
-                                                    <rect key="frame" x="0.0" y="25" width="129" height="18"/>
+                                                    <rect key="frame" x="0.0" y="25" width="145.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -233,8 +233,8 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Цена" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-T7-58b">
-                                            <rect key="frame" x="155" y="8" width="149" height="43"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <rect key="frame" x="171.5" y="8" width="132.5" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -322,55 +322,55 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Характеристики" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-Rl-DGW">
-                                <rect key="frame" x="16" y="363" width="288" height="20.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="16" y="363" width="288" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-gM-PwI">
-                                <rect key="frame" x="16" y="399.5" width="288" height="63.5"/>
+                                <rect key="frame" x="16" y="403" width="288" height="74"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-qA-4S0">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="63.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="74"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Год выпуска" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWP-FO-AOO">
-                                                <rect key="frame" x="0.0" y="0.0" width="144" height="14.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цвет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvc-uX-Ipd">
-                                                <rect key="frame" x="0.0" y="24.5" width="144" height="14.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="0.0" y="28" width="144" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Двигатель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3p-2c-Xom">
-                                                <rect key="frame" x="0.0" y="49" width="144" height="14.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="0.0" y="56" width="144" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="f6o-fc-xFZ">
-                                        <rect key="frame" x="144" y="0.0" width="144" height="63.5"/>
+                                        <rect key="frame" x="144" y="0.0" width="144" height="74"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="год модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-fa-Y6N">
-                                                <rect key="frame" x="0.0" y="0.0" width="144" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цвет модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmg-CD-Cri">
-                                                <rect key="frame" x="0.0" y="23" width="144" height="17.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="0.0" y="26.5" width="144" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="двигатель модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asp-fa-rDp">
-                                                <rect key="frame" x="0.0" y="46.5" width="144" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="0.0" y="53.5" width="144" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -422,31 +422,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пожалуйста, укажите ваше имя и контактный номер телефона " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp5-d4-ZIj">
-                                <rect key="frame" x="16" y="123" width="288" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <rect key="frame" x="16" y="123" width="288" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="siT-2I-Jqg">
-                                <rect key="frame" x="16" y="182" width="288" height="86"/>
+                                <rect key="frame" x="16" y="194" width="288" height="96"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-RY-bib">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="36K-CR-MW4"/>
+                                            <constraint firstAttribute="height" constant="40" id="36K-CR-MW4"/>
                                         </constraints>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер телефона" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vk2-bS-er7">
-                                        <rect key="frame" x="0.0" y="51" width="288" height="35"/>
+                                        <rect key="frame" x="0.0" y="56" width="288" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="fwA-Hj-jBP"/>
+                                            <constraint firstAttribute="height" constant="40" id="fwA-Hj-jBP"/>
                                         </constraints>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="family-name"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" enablesReturnKeyAutomatically="YES" smartDashesType="no" textContentType="tel"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -459,7 +459,6 @@
                                 <state key="normal" title="Беру! Перезвоните мне!"/>
                                 <connections>
                                     <action selector="callMeButtonPressed" destination="Q0k-he-T6V" eventType="touchUpInside" id="w8q-si-daE"/>
-                                    <segue destination="Y6b-pg-2PE" kind="unwind" unwindAction="unwindFor:" id="lj1-W3-aAZ"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uxh-eG-gSS">
@@ -504,7 +503,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-VW-w4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="Y6b-pg-2PE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5138" y="72"/>
         </scene>

@@ -9,7 +9,7 @@ import UIKit
 
 // подписал класс под протокол UITextFieldDelegate для работы с клавиатурой
 class ReserveViewController: UIViewController, UITextFieldDelegate {
-
+    
     //MARK: - IB Outlets
     @IBOutlet weak var carModelLabel: UILabel!
     
@@ -28,7 +28,7 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = #colorLiteral(red: 0.8049663901, green: 0.7776784301, blue: 0.8425303102, alpha: 1)
         
         carModelLabel.text = car.fullVehicleInformation
@@ -38,14 +38,34 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    // скрываем клавиатуру тапом по экрну
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
     //MARK: - IB Actions
-    // вызываем делегата при нажатии кнопки
+    
     @IBAction func callMeButtonPressed() {
-        delegate.printCustomerInfo(
-            name: customerNameTF.text ?? "",
-            phoneNumber: customerPhoneTF.text ?? "",
-            selectedCar: car.fullVehicleInformation)
         
+        printCustomerInfo()
+    
+        if customerNameTF.text == "" || customerPhoneTF.text == "" {
+            showAlert(
+                title: "Ошибка",
+                message: "Пожалуйста, укажите Имя и контактынй номер телефона."
+            )
+            
+        } else {
+            showAlert(
+                title: "Благодарим за заказ!",
+                message: "\(customerNameTF.text ?? "" ), наш менеджер скоро с вами свяжется."
+            )
+            customerContacts.append(customerNameTF.text ?? "")
+        }
+        
+        // вызываем делегата при нажатии кнопки
+        print(customerContacts)
     }
     
     //MARK: - Public methods
@@ -58,5 +78,29 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+}
+
+// добавление AlertController
+extension ReserveViewController {
     
+    // добавление AlertController
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        // Кнопка ОК
+        let okActionButton = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okActionButton)
+        
+        present(alert, animated: true)
+    }
+    
+    func printCustomerInfo() {
+        delegate.printCustomerInfo(
+            name: customerNameTF.text ?? "",
+            phoneNumber: customerPhoneTF.text ?? "",
+            selectedCar: car.fullVehicleInformation)
+    }
 }
