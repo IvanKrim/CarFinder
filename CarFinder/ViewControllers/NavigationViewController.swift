@@ -13,7 +13,8 @@ class NavigationViewController: UINavigationController {
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
+
+}
+
     
 }
