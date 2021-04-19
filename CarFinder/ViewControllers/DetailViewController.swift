@@ -40,5 +40,12 @@ class DetailViewController: UIViewController {
         carEngineLabel.text = car.carEngine
         
     }
+    
+    // передаем модель на следующий контроллер
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let reserveVC = segue.destination as? ReserveViewController {
+            reserveVC.car = car
+        }
+    }
 
 }
