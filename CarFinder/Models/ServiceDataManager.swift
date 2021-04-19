@@ -5,6 +5,8 @@
 //  Created by Kalabishka Ivan on 17.04.2021.
 //
 
+
+
 class DataManager {
     
     static let shared = DataManager()
@@ -36,3 +38,5 @@ class DataManager {
     
     private init() {}
 }
+
+

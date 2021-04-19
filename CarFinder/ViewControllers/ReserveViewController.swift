@@ -20,10 +20,11 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Public Properties
     
     var car: Car!
+    var delegate: ReserveVCDelegate!
     
     var customerContacts: [String] = []
     
-    //MARK: - Override Properties
+    //MARK: - Override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,20 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         
         customerNameTF.delegate = self
         customerPhoneTF.delegate = self
+        
     }
     
+    //MARK: - IB Actions
+    // вызываем делегата при нажатии кнопки
+    @IBAction func callMeButtonPressed() {
+        delegate.printCustomerInfo(
+            name: customerNameTF.text ?? "",
+            phoneNumber: customerPhoneTF.text ?? "",
+            selectedCar: car.fullVehicleInformation)
+        
+    }
+    
+    //MARK: - Public methods
     // добавляем метод для программирования кнопки return на клавиатуре
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == customerNameTF {

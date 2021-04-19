@@ -7,12 +7,10 @@
 
 import UIKit
 
-// здесь кастомный класс для нашей ячейки
-
+// кастомный класс для нашей ячейки
 class CarInfoTableViewCell: UITableViewCell {
     
     // аутлеты для лейблов внутри ячейки
-
     @IBOutlet weak var nameYearLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
