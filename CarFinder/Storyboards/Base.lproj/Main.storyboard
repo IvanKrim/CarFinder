@@ -197,7 +197,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aeg-91-e8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4294" y="-620"/>
+            <point key="canvasLocation" x="4367" y="-618"/>
         </scene>
         <!--N предложений-->
         <scene sceneID="UcA-kz-alk">
@@ -253,6 +253,7 @@
                                     <outlet property="colorLabel" destination="c00-kv-A7L" id="Tpz-bO-Tfy"/>
                                     <outlet property="nameYearLabel" destination="rYf-jZ-UEZ" id="8EP-za-kKV"/>
                                     <outlet property="priceLabel" destination="QeL-T7-58b" id="EQX-C9-o2k"/>
+                                    <segue destination="5qF-uo-pFj" kind="show" id="47c-DT-9Mo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -283,7 +284,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aQx-or-a8K">
-                                <rect key="frame" x="16" y="16" width="288" height="61"/>
+                                <rect key="frame" x="16" y="60" width="288" height="61"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audi A4, 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-7l-GNu">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
@@ -315,19 +316,19 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Audi A4, 2020" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-Ji-ZUl">
-                                <rect key="frame" x="16" y="93" width="288" height="216"/>
+                                <rect key="frame" x="16" y="137" width="288" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1v3-Ji-ZUl" secondAttribute="height" multiplier="4:3" id="K6J-0Z-nqc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Характеристики" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-Rl-DGW">
-                                <rect key="frame" x="16" y="325" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="369" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-gM-PwI">
-                                <rect key="frame" x="16" y="361.5" width="288" height="63.5"/>
+                                <rect key="frame" x="16" y="405.5" width="288" height="63.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-qA-4S0">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="63.5"/>
@@ -409,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHB-H6-2K3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4294" y="72"/>
+            <point key="canvasLocation" x="4367" y="72"/>
         </scene>
         <!--Reserve View Controller-->
         <scene sceneID="p89-Lh-Kc9">
@@ -497,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-VW-w4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4999" y="72"/>
+            <point key="canvasLocation" x="5138" y="72"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="KUQ-se-INH">

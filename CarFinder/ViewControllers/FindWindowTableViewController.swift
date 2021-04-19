@@ -47,5 +47,17 @@ class FindWindowTableViewController: UITableViewController {
         
         return cell
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // извлекаем опциональное значение индекса и присваиваем переменной
+        if let indexPath = tableView.indexPathForSelectedRow {
+            //кастим контроллер
+            let detailVC = segue.destination as! DetailViewController
+            //передаем значение из массива по индексу строки в переменную 
+            detailVC.car = listOfCars[indexPath.row]
+        }
+    }
 
 }
