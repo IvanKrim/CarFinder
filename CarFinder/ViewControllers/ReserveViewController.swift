@@ -18,14 +18,12 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: - Public Properties
-    
     var car: Car!
     var delegate: ReserveVCDelegate!
     
-    var customerContacts: [String] = []
+    var customerContacts = ""
     
     //MARK: - Override methods
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,28 +43,11 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - IB Actions
-    
     @IBAction func callMeButtonPressed() {
+        showAlert()
         
-        printCustomerInfo()
-    
-        if customerNameTF.text == "" || customerPhoneTF.text == "" {
-            showAlert(
-                title: "Ошибка",
-                message: "Пожалуйста, укажите Имя и контактынй номер телефона."
-            )
-            
-        } else {
-            showAlert(
-                title: "Благодарим за заказ!",
-                message: "\(customerNameTF.text ?? "" ), наш менеджер скоро с вами свяжется."
-            )
-            customerContacts.append(customerNameTF.text ?? "")
-        }
-        
-        // вызываем делегата при нажатии кнопки
-        print(customerContacts)
     }
+    
     
     //MARK: - Public methods
     // добавляем метод для программирования кнопки return на клавиатуре
@@ -80,11 +61,11 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-// добавление AlertController
+
 extension ReserveViewController {
     
     // добавление AlertController
-    private func showAlert(title: String, message: String) {
+    private func showAlertLogic(title: String, message: String) {
         let alert = UIAlertController(
             title: title,
             message: message,
@@ -96,11 +77,22 @@ extension ReserveViewController {
         
         present(alert, animated: true)
     }
-    
-    func printCustomerInfo() {
-        delegate.printCustomerInfo(
-            name: customerNameTF.text ?? "",
-            phoneNumber: customerPhoneTF.text ?? "",
-            selectedCar: car.fullVehicleInformation)
+    // вынесен за класс временно
+    private func showAlert() {
+        if customerNameTF.text == "" || customerPhoneTF.text == "" {
+            showAlertLogic(
+                title: "Ошибка",
+                message: "Пожалуйста, укажите Имя и контактынй номер телефона."
+            )
+            
+        } else {
+            showAlertLogic(
+                title: "Благодарим за заказ!",
+                message: "\(customerNameTF.text ?? "" ), наш менеджер скоро с вами свяжется."
+            )
+            customerContacts.append(customerNameTF.text ?? "")
+            
+        }
     }
+    
 }
