@@ -9,12 +9,6 @@ import UIKit
 
 class FindWindowTableViewController: UITableViewController {
     
-    //MARK: - IB Outlets
-    @IBOutlet weak var carNameYearLabel: UILabel!
-    @IBOutlet weak var carColorLabel: UILabel!
-    @IBOutlet weak var carPriceLabel: UILabel!
-    
-
     //MARK: - Public Properties
     
     var listOfCars: [Car]!
@@ -24,6 +18,9 @@ class FindWindowTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.7496516109, green: 0.8531972766, blue: 0.9390820265, alpha: 1)
+        
+        // количество предложений в navigation title
+        navigationItem.title = "\(listOfCars.count) предложений"
          
     }
 
@@ -46,6 +43,19 @@ class FindWindowTableViewController: UITableViewController {
         cell.cellSetup(object: car)
         
         return cell
+    }
+    
+    // MARK: - Navigation
+    
+    // переход с передачей данных из строки
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // извлекаем опциональное значение индекса и присваиваем переменной
+        if let indexPath = tableView.indexPathForSelectedRow {
+            //кастим контроллер
+            let detailVC = segue.destination as! DetailViewController
+            //передаем значение из массива по индексу строки в переменную 
+            detailVC.car = listOfCars[indexPath.row]
+        }
     }
 
 }

@@ -13,16 +13,32 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var carModelLabel: UILabel!
     @IBOutlet weak var carPriceLabel: UILabel!
     
+    @IBOutlet weak var carImageView: UIImageView!
+    
     @IBOutlet weak var yearOfCarManufactureLabel: UILabel!
     @IBOutlet weak var carColorLabel: UILabel!
     @IBOutlet weak var carEngineLabel: UILabel!
     
+    
     //MARK: - Public Properties
+    
     var car: Car!
+    
+    //MARK: - Override methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        
+        carModelLabel.text = car.fullVehicleInformation
+        carPriceLabel.text = car.carPrice
+        
+        carImageView.image = UIImage(named: car.fullVehicleInformation)
+        
+        yearOfCarManufactureLabel.text = car.yearOfCarManufacture
+        carColorLabel.text = car.carColor
+        carEngineLabel.text = car.carEngine
+        
     }
 
 }
