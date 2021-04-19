@@ -20,12 +20,11 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         // передаю массив через navigation controller на findwindow controller
-        
-        
         guard let navigationVC = segue.destination as? NavigationViewController else { return }
-        
         let findWindowTableVC = navigationVC.topViewController as! FindWindowTableViewController
+        
         findWindowTableVC.listOfCars = listOfCars
         
     }

@@ -9,25 +9,29 @@ class DataManager {
     
     static let shared = DataManager()
     
-    // исправил названия массивов во множественном числе
+    
     let carModels = [
-    "Audi A4", "BMW 3", "Mercedes-Benz E-class", "Mazda 6", "Ford Mustang"
+        "Audi A4", "BMW 3", "Mercedes-Benz E-class",
+        "Mazda 6", "Ford Mustang"
     ]
-    // добавил массив с ценами
+    
     let carPrices = [
-        "1500000", "1650000", "1850000", "2000000", "2100000"
+        "1 500 000 руб.", "1 650 000 руб.", "1 850 000 руб.",
+        "2 000 000 руб.", "2 100 000 руб."
     ]
     
     let yearsOfCarManufacture = [
-        "2020", "2020", "2019", "2020", "2020"
+        "2020", "2020", "2019",
+        "2020", "2020"
     ]
     
     let carColors = [
-    "Синий", "Белый", "Белый", "Красный", "Синий"
+        "Синий", "Белый", "Белый",
+        "Красный", "Синий"
     ]
     
     let carEngines = [
-    "Бензин", "Дизель"
+        "Бензин", "Дизель"
     ]
     
     private init() {}

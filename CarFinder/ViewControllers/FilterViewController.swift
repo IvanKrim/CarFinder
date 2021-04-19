@@ -10,6 +10,7 @@ import UIKit
 class FilterViewController: UIViewController {
 
     //MARK: - Public Properties
+    
     var car: Car!
     
     //MARK: - Override Methods

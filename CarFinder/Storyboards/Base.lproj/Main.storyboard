@@ -284,16 +284,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aQx-or-a8K">
-                                <rect key="frame" x="16" y="60" width="288" height="61"/>
+                                <rect key="frame" x="16" y="60" width="288" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audi A4, 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-7l-GNu">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название и год модели" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-7l-GNu">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 850 000 р" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-MJ-dxy">
-                                        <rect key="frame" x="0.0" y="36" width="288" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цена модели" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-MJ-dxy">
+                                        <rect key="frame" x="0.0" y="30" width="288" height="25"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="fsf-uT-shV"/>
@@ -305,7 +305,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUU-7j-iVt">
-                                <rect key="frame" x="16" y="483" width="288" height="45"/>
+                                <rect key="frame" x="16" y="493" width="288" height="45"/>
                                 <color key="backgroundColor" red="0.89182609319999995" green="0.96845239400000005" blue="0.99787062410000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eB8-Wr-ALo"/>
@@ -315,20 +315,20 @@
                                     <segue destination="Q0k-he-T6V" kind="presentation" id="CI0-2V-iZ4"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Audi A4, 2020" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-Ji-ZUl">
-                                <rect key="frame" x="16" y="137" width="288" height="216"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-Ji-ZUl">
+                                <rect key="frame" x="16" y="131" width="288" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1v3-Ji-ZUl" secondAttribute="height" multiplier="4:3" id="K6J-0Z-nqc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Характеристики" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-Rl-DGW">
-                                <rect key="frame" x="16" y="369" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="363" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-gM-PwI">
-                                <rect key="frame" x="16" y="405.5" width="288" height="63.5"/>
+                                <rect key="frame" x="16" y="399.5" width="288" height="63.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-qA-4S0">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="63.5"/>
@@ -356,19 +356,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="f6o-fc-xFZ">
                                         <rect key="frame" x="144" y="0.0" width="144" height="63.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-fa-Y6N">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="год модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-fa-Y6N">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Синий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmg-CD-Cri">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цвет модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmg-CD-Cri">
                                                 <rect key="frame" x="0.0" y="23" width="144" height="17.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бензин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asp-fa-rDp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="двигатель модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asp-fa-rDp">
                                                 <rect key="frame" x="0.0" y="46.5" width="144" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
@@ -383,7 +383,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uYe-IR-ZqZ" firstAttribute="trailing" secondItem="aQx-or-a8K" secondAttribute="trailing" constant="16" id="BLb-c1-e2v"/>
-                            <constraint firstItem="uYe-IR-ZqZ" firstAttribute="bottom" secondItem="CUU-7j-iVt" secondAttribute="bottom" constant="40" id="BgB-GQ-Y5n"/>
+                            <constraint firstItem="uYe-IR-ZqZ" firstAttribute="bottom" secondItem="CUU-7j-iVt" secondAttribute="bottom" constant="30" id="BgB-GQ-Y5n"/>
                             <constraint firstItem="aQx-or-a8K" firstAttribute="leading" secondItem="uYe-IR-ZqZ" secondAttribute="leading" constant="16" id="BoD-7Z-8Y0"/>
                             <constraint firstItem="uYe-IR-ZqZ" firstAttribute="trailing" secondItem="CUU-7j-iVt" secondAttribute="trailing" constant="16" id="EeW-fa-Tc4"/>
                             <constraint firstItem="AXh-gM-PwI" firstAttribute="leading" secondItem="uYe-IR-ZqZ" secondAttribute="leading" constant="16" id="Lbg-hU-58t"/>
@@ -403,6 +403,7 @@
                     <connections>
                         <outlet property="carColorLabel" destination="fmg-CD-Cri" id="mBa-Ww-5AP"/>
                         <outlet property="carEngineLabel" destination="Asp-fa-rDp" id="foU-eI-oAr"/>
+                        <outlet property="carImageView" destination="1v3-Ji-ZUl" id="Oib-IG-auj"/>
                         <outlet property="carModelLabel" destination="zkZ-7l-GNu" id="Wfp-zl-buq"/>
                         <outlet property="carPriceLabel" destination="lYf-MJ-dxy" id="fM5-sg-XVP"/>
                         <outlet property="yearOfCarManufactureLabel" destination="aYN-fa-Y6N" id="2on-y8-nvk"/>
@@ -519,7 +520,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Audi A4, 2020" width="1903" height="1410"/>
         <image name="SearchIMG" width="741" height="741"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

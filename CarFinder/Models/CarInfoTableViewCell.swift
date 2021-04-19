@@ -20,9 +20,9 @@ class CarInfoTableViewCell: UITableViewCell {
     // функция передающая свойства экземпляра в тектовые поля аутлетов, принимает объект с типом модели
     func cellSetup(object: Car) {
         
-        self.nameYearLabel.text = object.fullVehicleInformation
-        self.colorLabel.text = object.carColor
-        self.priceLabel.text = object.carPrice
+        nameYearLabel.text = object.fullVehicleInformation
+        colorLabel.text = object.carColor
+        priceLabel.text = object.carPrice
     }
 
 }
