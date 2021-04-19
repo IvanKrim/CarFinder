@@ -422,31 +422,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пожалуйста, укажите ваше имя и контактный номер телефона " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp5-d4-ZIj">
-                                <rect key="frame" x="16" y="186" width="288" height="29"/>
+                                <rect key="frame" x="16" y="123" width="288" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="siT-2I-Jqg">
-                                <rect key="frame" x="16" y="231" width="288" height="86"/>
+                                <rect key="frame" x="16" y="182" width="288" height="86"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Имя" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-RY-bib">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-RY-bib">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="36K-CR-MW4"/>
                                         </constraints>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Номер телефона " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vk2-bS-er7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vk2-bS-er7">
                                         <rect key="frame" x="0.0" y="51" width="288" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="fwA-Hj-jBP"/>
                                         </constraints>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="family-name"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -459,7 +459,7 @@
                                 <state key="normal" title="Отправить"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uxh-eG-gSS">
-                                <rect key="frame" x="16" y="60" width="288" height="68"/>
+                                <rect key="frame" x="16" y="25" width="288" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бронирование " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-4W-rXf">
                                         <rect key="frame" x="0.0" y="0.0" width="222" height="36"/>
@@ -467,8 +467,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audi A4, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2s-cg-4zO">
-                                        <rect key="frame" x="0.0" y="44" width="125.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название и год модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2s-cg-4zO">
+                                        <rect key="frame" x="0.0" y="44" width="213" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -480,21 +480,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gp5-d4-ZIj" secondAttribute="trailing" constant="16" id="3aE-nP-SFP"/>
-                            <constraint firstItem="uxh-eG-gSS" firstAttribute="top" secondItem="VyF-uR-3F2" secondAttribute="top" constant="60" id="77y-ZG-JlX"/>
+                            <constraint firstItem="uxh-eG-gSS" firstAttribute="top" secondItem="VyF-uR-3F2" secondAttribute="top" constant="25" id="77y-ZG-JlX"/>
                             <constraint firstItem="Gp5-d4-ZIj" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="8GW-7a-rOX"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="bottom" secondItem="Qnd-FX-u0C" secondAttribute="bottom" constant="60" id="8t6-TU-xTb"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="Qnd-FX-u0C" secondAttribute="trailing" constant="16" id="Cqr-aR-twV"/>
-                            <constraint firstItem="siT-2I-Jqg" firstAttribute="top" secondItem="Gp5-d4-ZIj" secondAttribute="bottom" constant="16" id="Do4-pj-dDu"/>
                             <constraint firstItem="siT-2I-Jqg" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="Mdg-N7-mS2"/>
                             <constraint firstItem="uxh-eG-gSS" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="OGL-6d-mM4"/>
+                            <constraint firstItem="siT-2I-Jqg" firstAttribute="top" secondItem="Gp5-d4-ZIj" secondAttribute="bottom" constant="30" id="OMV-3g-cDE"/>
+                            <constraint firstItem="Gp5-d4-ZIj" firstAttribute="top" secondItem="uxh-eG-gSS" secondAttribute="bottom" constant="30" id="PZI-f3-Wjp"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="siT-2I-Jqg" secondAttribute="trailing" constant="16" id="ZhU-TW-AGx"/>
                             <constraint firstItem="Qnd-FX-u0C" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="gtb-aZ-lfN"/>
-                            <constraint firstItem="siT-2I-Jqg" firstAttribute="centerY" secondItem="PFI-Np-P2B" secondAttribute="centerY" id="n12-VF-cP8"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="uxh-eG-gSS" secondAttribute="trailing" constant="16" id="sp3-So-Ame"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="carModelLabel" destination="F2s-cg-4zO" id="jOB-2w-RhC"/>
+                        <outlet property="customerNameTF" destination="OMl-RY-bib" id="U7K-qE-YvY"/>
+                        <outlet property="customerPhoneTF" destination="vk2-bS-er7" id="YkZ-Hu-RKk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-VW-w4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

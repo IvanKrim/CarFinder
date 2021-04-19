@@ -12,6 +12,8 @@ class ReserveViewController: UIViewController {
     //MARK: - IB Outlets
     @IBOutlet weak var carModelLabel: UILabel!
     
+    @IBOutlet weak var customerNameTF: UITextField!
+    @IBOutlet weak var customerPhoneTF: UITextField!
     
     
     //MARK: - Public Properties
