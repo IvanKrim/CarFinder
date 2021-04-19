@@ -69,8 +69,10 @@ extension ReserveViewController {
             preferredStyle: .alert
         )
         // Кнопка ОК
-        let okActionButton = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okActionButton)
+        //let okActionButton = UIAlertAction(title: "OK", style: .default)
+        let goToTheCartActionButton = UIAlertAction(title: "Перейти в корзину", style: .default)
+        //alert.addAction(okActionButton)
+        alert.addAction(goToTheCartActionButton)
         present(alert, animated: true)
         
     }
