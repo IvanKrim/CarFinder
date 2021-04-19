@@ -16,7 +16,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var customerNameTF: UITextField!
     @IBOutlet weak var customerPhoneTF: UITextField!
     
-    
     //MARK: - Public Properties
     var car: Car!
     var delegate: ReserveVCDelegate!
@@ -48,7 +47,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
     //MARK: - Public methods
     // добавляем метод для программирования кнопки return на клавиатуре
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -60,7 +58,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 }
-
 
 extension ReserveViewController {
     
@@ -74,8 +71,8 @@ extension ReserveViewController {
         // Кнопка ОК
         let okActionButton = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okActionButton)
-        
         present(alert, animated: true)
+        
     }
     // вынесен за класс временно
     private func showAlert() {
@@ -90,9 +87,9 @@ extension ReserveViewController {
                 title: "Благодарим за заказ!",
                 message: "\(customerNameTF.text ?? "" ), наш менеджер скоро с вами свяжется."
             )
-            customerContacts.append(customerNameTF.text ?? "")
-            
+//            dismiss(animated: true, completion: nil)
+//            customerContacts.append(customerNameTF.text ?? "")
         }
+        
     }
-    
 }
