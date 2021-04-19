@@ -506,6 +506,51 @@
             </objects>
             <point key="canvasLocation" x="5138" y="72"/>
         </scene>
+        <!--Корзина-->
+        <scene sceneID="i6r-JW-j8E">
+            <objects>
+                <tableViewController id="9aA-sD-Z8Z" customClass="CartTVC" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UdN-L8-o7y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KAF-IW-mr2">
+                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KAF-IW-mr2" id="7vx-4O-4Mg">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9aA-sD-Z8Z" id="Fys-Gu-raK"/>
+                            <outlet property="delegate" destination="9aA-sD-Z8Z" id="AJH-Od-UfG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Корзина" id="pao-9J-DIa"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xq-aH-MIo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5934" y="771"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ptZ-aG-Ofq">
+            <objects>
+                <navigationController id="tgS-z3-ou8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="x8i-me-hbh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9aA-sD-Z8Z" kind="relationship" relationship="rootViewController" id="Ogb-kq-lDJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3A-Ip-d11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5138" y="772"/>
+        </scene>
         <!--Navigation View Controller-->
         <scene sceneID="KUQ-se-INH">
             <objects>

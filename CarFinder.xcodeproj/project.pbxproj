@@ -14,6 +14,7 @@
 		0E863A7D262A2F7E00027776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E863A7C262A2F7E00027776 /* Assets.xcassets */; };
 		0E863A80262A2F7E00027776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E863A7E262A2F7E00027776 /* LaunchScreen.storyboard */; };
 		0E863AB4262B81B300027776 /* ServiceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E863AB3262B81B300027776 /* ServiceDataManager.swift */; };
+		0E863AC4262E215400027776 /* CartTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E863AC3262E215400027776 /* CartTVC.swift */; };
 		C468D473262B884C008F3028 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C468D472262B884C008F3028 /* NavigationViewController.swift */; };
 		C4846F07262A372B00309036 /* ModelsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4846F06262A372B00309036 /* ModelsModels.swift */; };
 		C48FD3E2262AD892003C7AF5 /* FindWindowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FD3E1262AD892003C7AF5 /* FindWindowTableViewController.swift */; };
@@ -33,6 +34,7 @@
 		0E863A7F262A2F7E00027776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E863A81262A2F7E00027776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E863AB3262B81B300027776 /* ServiceDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDataManager.swift; sourceTree = "<group>"; };
+		0E863AC3262E215400027776 /* CartTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTVC.swift; sourceTree = "<group>"; };
 		C468D472262B884C008F3028 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		C4846F06262A372B00309036 /* ModelsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsModels.swift; sourceTree = "<group>"; };
 		C48FD3E1262AD892003C7AF5 /* FindWindowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWindowTableViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				C48FD3E4262ADA97003C7AF5 /* FilterViewController.swift */,
 				C48FD3E7262ADBD6003C7AF5 /* DetailViewController.swift */,
 				C48FD3EA262ADC58003C7AF5 /* ReserveViewController.swift */,
+				0E863AC3262E215400027776 /* CartTVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				C48FD3E2262AD892003C7AF5 /* FindWindowTableViewController.swift in Sources */,
 				0E863A74262A2F7D00027776 /* AppDelegate.swift in Sources */,
 				F7A67D1E262C813600349F5F /* CarInfoTableViewCell.swift in Sources */,
+				0E863AC4262E215400027776 /* CartTVC.swift in Sources */,
 				0E863A76262A2F7D00027776 /* SceneDelegate.swift in Sources */,
 				C4846F07262A372B00309036 /* ModelsModels.swift in Sources */,
 				0E863AB4262B81B300027776 /* ServiceDataManager.swift in Sources */,
