@@ -7,6 +7,14 @@
 
 import UIKit
 
+// создаем протокол для класса
+protocol ReserveVCDelegate {
+    func printCustomerInfo(
+        name: String,
+        phoneNumber: String,
+        selectedCar: String)
+}
+
 class DetailViewController: UIViewController {
     
     //MARK: - IB Outlets
@@ -39,6 +47,26 @@ class DetailViewController: UIViewController {
         carColorLabel.text = car.carColor
         carEngineLabel.text = car.carEngine
         
+    }
+    
+    // передаем модель и делегата на следующий контроллер
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let reserveVC = segue.destination as? ReserveViewController {
+            reserveVC.car = car
+            reserveVC.delegate = self
+        }
+    }
+}
+
+// расширение, описывающее метод
+extension DetailViewController: ReserveVCDelegate {
+    func printCustomerInfo(
+        name: String,
+        phoneNumber: String,
+        selectedCar: String
+    ) {
+        print("Покупатель \(name), телефон: \(phoneNumber) забронировал \(selectedCar)"
+        )
     }
 
 }
