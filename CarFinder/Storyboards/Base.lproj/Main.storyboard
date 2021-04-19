@@ -28,7 +28,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="H5H-96-pce"/>
                                 </constraints>
-                                <state key="normal" title="Войти">
+                                <state key="normal" title="Хочу авто!">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -457,6 +457,9 @@
                                     <constraint firstAttribute="height" constant="45" id="JDR-uu-6pL"/>
                                 </constraints>
                                 <state key="normal" title="Отправить"/>
+                                <connections>
+                                    <segue destination="Y6b-pg-2PE" kind="unwind" unwindAction="unwindFor:" id="lj1-W3-aAZ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uxh-eG-gSS">
                                 <rect key="frame" x="16" y="25" width="288" height="68"/>
@@ -500,6 +503,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-VW-w4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Y6b-pg-2PE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5138" y="72"/>
         </scene>
