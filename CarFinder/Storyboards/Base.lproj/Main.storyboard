@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="H5H-96-pce"/>
                                 </constraints>
-                                <state key="normal" title="Войти">
+                                <state key="normal" title="Хочу авто!">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="2083" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Filter View Controller-->
         <scene sceneID="M6L-un-VgF">
             <objects>
-                <viewController id="zI1-4h-CGE" sceneMemberID="viewController">
+                <viewController id="zI1-4h-CGE" customClass="FilterViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="On8-t4-XBL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,81 +197,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aeg-91-e8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4294" y="-620"/>
+            <point key="canvasLocation" x="4367" y="-618"/>
         </scene>
         <!--N предложений-->
         <scene sceneID="UcA-kz-alk">
             <objects>
-                <tableViewController id="AMc-fA-76u" sceneMemberID="viewController">
+                <tableViewController id="AMc-fA-76u" customClass="FindWindowTableViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8Gc-5J-Lq4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vYQ-HP-OQ6">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="carCell" rowHeight="59" id="Lng-r9-qAI" customClass="CarInfoTableViewCell" customModule="CarFinder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vYQ-HP-OQ6" id="ASe-Hm-v2k">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lng-r9-qAI" id="S9i-De-tJh">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="7gc-C3-5he">
-                                            <rect key="frame" x="16" y="3.5" width="288" height="37"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HGL-C5-TKq">
+                                            <rect key="frame" x="16" y="8" width="129" height="43"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6ah-f3-1Hi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="108.5" height="37"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="56C-LT-qj3">
-                                                            <rect key="frame" x="0.0" y="0.0" width="108.5" height="20.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audi A4, 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPX-7w-pc3">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="108.5" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OFS-Jy-2cb">
-                                                            <rect key="frame" x="0.0" y="22.5" width="108.5" height="14.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Синий" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jN-WZ-l4u">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="108.5" height="14.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 850 000 р" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ph-yf-H8H">
-                                                    <rect key="frame" x="158.5" y="0.0" width="129.5" height="37"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название и год авто" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYf-jZ-UEZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="129" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цвет" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c00-kv-A7L">
+                                                    <rect key="frame" x="0.0" y="25" width="129" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Цена" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeL-T7-58b">
+                                            <rect key="frame" x="155" y="8" width="149" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="7gc-C3-5he" firstAttribute="centerY" secondItem="ASe-Hm-v2k" secondAttribute="centerY" id="2yQ-rV-dvK"/>
-                                        <constraint firstAttribute="trailing" secondItem="7gc-C3-5he" secondAttribute="trailing" constant="16" id="Sqs-Ov-un2"/>
-                                        <constraint firstItem="7gc-C3-5he" firstAttribute="leading" secondItem="ASe-Hm-v2k" secondAttribute="leading" constant="16" id="sGJ-Jj-rvc"/>
+                                        <constraint firstAttribute="bottom" secondItem="HGL-C5-TKq" secondAttribute="bottom" constant="8" id="Apq-ot-jrU"/>
+                                        <constraint firstAttribute="trailing" secondItem="QeL-T7-58b" secondAttribute="trailing" constant="16" id="CTo-Tf-TE0"/>
+                                        <constraint firstItem="QeL-T7-58b" firstAttribute="top" secondItem="S9i-De-tJh" secondAttribute="top" constant="8" id="S2e-C1-Uuv"/>
+                                        <constraint firstItem="HGL-C5-TKq" firstAttribute="top" secondItem="S9i-De-tJh" secondAttribute="top" constant="8" id="cG3-ex-biT"/>
+                                        <constraint firstItem="HGL-C5-TKq" firstAttribute="leading" secondItem="S9i-De-tJh" secondAttribute="leading" constant="16" id="cZF-Jw-qCh"/>
+                                        <constraint firstAttribute="bottom" secondItem="QeL-T7-58b" secondAttribute="bottom" constant="8" id="lSU-Ax-xu3"/>
+                                        <constraint firstItem="QeL-T7-58b" firstAttribute="leading" secondItem="HGL-C5-TKq" secondAttribute="trailing" constant="10" id="t7W-sY-ydl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5qF-uo-pFj" kind="show" id="ii6-Pq-4ZL"/>
+                                    <outlet property="colorLabel" destination="c00-kv-A7L" id="Tpz-bO-Tfy"/>
+                                    <outlet property="nameYearLabel" destination="rYf-jZ-UEZ" id="8EP-za-kKV"/>
+                                    <outlet property="priceLabel" destination="QeL-T7-58b" id="EQX-C9-o2k"/>
+                                    <segue destination="5qF-uo-pFj" kind="show" id="47c-DT-9Mo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="AMc-fA-76u" id="cXH-E8-LS1"/>
                             <outlet property="delegate" destination="AMc-fA-76u" id="PXR-hs-w9d"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="N предложений" id="eiv-cJ-IIJ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="bZk-Iz-7bJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="bZk-Iz-7bJ">
                             <connections>
                                 <segue destination="zI1-4h-CGE" kind="presentation" id="e60-Ic-m0l"/>
                             </connections>
@@ -280,27 +273,27 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlS-m2-e0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3482" y="72"/>
+            <point key="canvasLocation" x="3545.625" y="71.83098591549296"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Jjg-zE-7o7">
             <objects>
-                <viewController id="5qF-uo-pFj" sceneMemberID="viewController">
+                <viewController id="5qF-uo-pFj" customClass="DetailViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0nG-bF-MaI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aQx-or-a8K">
-                                <rect key="frame" x="16" y="60" width="288" height="61"/>
+                                <rect key="frame" x="16" y="60" width="288" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audi A4, 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-7l-GNu">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название и год модели" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-7l-GNu">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 850 000 р" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-MJ-dxy">
-                                        <rect key="frame" x="0.0" y="36" width="288" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цена модели" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-MJ-dxy">
+                                        <rect key="frame" x="0.0" y="30" width="288" height="25"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="fsf-uT-shV"/>
@@ -312,7 +305,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUU-7j-iVt">
-                                <rect key="frame" x="16" y="483" width="288" height="45"/>
+                                <rect key="frame" x="16" y="493" width="288" height="45"/>
                                 <color key="backgroundColor" red="0.89182609319999995" green="0.96845239400000005" blue="0.99787062410000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eB8-Wr-ALo"/>
@@ -322,20 +315,20 @@
                                     <segue destination="Q0k-he-T6V" kind="presentation" id="CI0-2V-iZ4"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Audi A4, 2020" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-Ji-ZUl">
-                                <rect key="frame" x="16" y="137" width="288" height="216"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-Ji-ZUl">
+                                <rect key="frame" x="16" y="131" width="288" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1v3-Ji-ZUl" secondAttribute="height" multiplier="4:3" id="K6J-0Z-nqc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Характеристики" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-Rl-DGW">
-                                <rect key="frame" x="16" y="369" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="363" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-gM-PwI">
-                                <rect key="frame" x="16" y="405.5" width="288" height="63.5"/>
+                                <rect key="frame" x="16" y="399.5" width="288" height="63.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-qA-4S0">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="63.5"/>
@@ -363,19 +356,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="f6o-fc-xFZ">
                                         <rect key="frame" x="144" y="0.0" width="144" height="63.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-fa-Y6N">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="год модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-fa-Y6N">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Синий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmg-CD-Cri">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цвет модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmg-CD-Cri">
                                                 <rect key="frame" x="0.0" y="23" width="144" height="17.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бензин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asp-fa-rDp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="двигатель модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asp-fa-rDp">
                                                 <rect key="frame" x="0.0" y="46.5" width="144" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
@@ -390,7 +383,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uYe-IR-ZqZ" firstAttribute="trailing" secondItem="aQx-or-a8K" secondAttribute="trailing" constant="16" id="BLb-c1-e2v"/>
-                            <constraint firstItem="uYe-IR-ZqZ" firstAttribute="bottom" secondItem="CUU-7j-iVt" secondAttribute="bottom" constant="40" id="BgB-GQ-Y5n"/>
+                            <constraint firstItem="uYe-IR-ZqZ" firstAttribute="bottom" secondItem="CUU-7j-iVt" secondAttribute="bottom" constant="30" id="BgB-GQ-Y5n"/>
                             <constraint firstItem="aQx-or-a8K" firstAttribute="leading" secondItem="uYe-IR-ZqZ" secondAttribute="leading" constant="16" id="BoD-7Z-8Y0"/>
                             <constraint firstItem="uYe-IR-ZqZ" firstAttribute="trailing" secondItem="CUU-7j-iVt" secondAttribute="trailing" constant="16" id="EeW-fa-Tc4"/>
                             <constraint firstItem="AXh-gM-PwI" firstAttribute="leading" secondItem="uYe-IR-ZqZ" secondAttribute="leading" constant="16" id="Lbg-hU-58t"/>
@@ -407,45 +400,53 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Yq-Zi-PzO"/>
+                    <connections>
+                        <outlet property="carColorLabel" destination="fmg-CD-Cri" id="mBa-Ww-5AP"/>
+                        <outlet property="carEngineLabel" destination="Asp-fa-rDp" id="foU-eI-oAr"/>
+                        <outlet property="carImageView" destination="1v3-Ji-ZUl" id="Oib-IG-auj"/>
+                        <outlet property="carModelLabel" destination="zkZ-7l-GNu" id="Wfp-zl-buq"/>
+                        <outlet property="carPriceLabel" destination="lYf-MJ-dxy" id="fM5-sg-XVP"/>
+                        <outlet property="yearOfCarManufactureLabel" destination="aYN-fa-Y6N" id="2on-y8-nvk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SHB-H6-2K3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4294" y="72"/>
+            <point key="canvasLocation" x="4367" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--Reserve View Controller-->
         <scene sceneID="p89-Lh-Kc9">
             <objects>
-                <viewController id="Q0k-he-T6V" sceneMemberID="viewController">
+                <viewController id="Q0k-he-T6V" customClass="ReserveViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PFI-Np-P2B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пожалуйста, укажите ваше имя и контактный номер телефона " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp5-d4-ZIj">
-                                <rect key="frame" x="16" y="186" width="288" height="29"/>
+                                <rect key="frame" x="16" y="123" width="288" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="siT-2I-Jqg">
-                                <rect key="frame" x="16" y="231" width="288" height="86"/>
+                                <rect key="frame" x="16" y="182" width="288" height="86"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Имя" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-RY-bib">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-RY-bib">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="36K-CR-MW4"/>
                                         </constraints>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Номер телефона " borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vk2-bS-er7">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер телефона" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vk2-bS-er7">
                                         <rect key="frame" x="0.0" y="51" width="288" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="fwA-Hj-jBP"/>
                                         </constraints>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="family-name"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -455,10 +456,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="JDR-uu-6pL"/>
                                 </constraints>
-                                <state key="normal" title="Отправить"/>
+                                <state key="normal" title="Беру! Перезвоните мне!"/>
+                                <connections>
+                                    <action selector="callMeButtonPressed" destination="Q0k-he-T6V" eventType="touchUpInside" id="w8q-si-daE"/>
+                                    <segue destination="Y6b-pg-2PE" kind="unwind" unwindAction="unwindFor:" id="lj1-W3-aAZ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uxh-eG-gSS">
-                                <rect key="frame" x="16" y="60" width="288" height="68"/>
+                                <rect key="frame" x="16" y="25" width="288" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бронирование " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-4W-rXf">
                                         <rect key="frame" x="0.0" y="0.0" width="222" height="36"/>
@@ -466,8 +471,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audi A4, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2s-cg-4zO">
-                                        <rect key="frame" x="0.0" y="44" width="125.5" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название и год модели" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2s-cg-4zO">
+                                        <rect key="frame" x="0.0" y="44" width="213" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -479,28 +484,34 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gp5-d4-ZIj" secondAttribute="trailing" constant="16" id="3aE-nP-SFP"/>
-                            <constraint firstItem="uxh-eG-gSS" firstAttribute="top" secondItem="VyF-uR-3F2" secondAttribute="top" constant="60" id="77y-ZG-JlX"/>
+                            <constraint firstItem="uxh-eG-gSS" firstAttribute="top" secondItem="VyF-uR-3F2" secondAttribute="top" constant="25" id="77y-ZG-JlX"/>
                             <constraint firstItem="Gp5-d4-ZIj" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="8GW-7a-rOX"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="bottom" secondItem="Qnd-FX-u0C" secondAttribute="bottom" constant="60" id="8t6-TU-xTb"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="Qnd-FX-u0C" secondAttribute="trailing" constant="16" id="Cqr-aR-twV"/>
-                            <constraint firstItem="siT-2I-Jqg" firstAttribute="top" secondItem="Gp5-d4-ZIj" secondAttribute="bottom" constant="16" id="Do4-pj-dDu"/>
                             <constraint firstItem="siT-2I-Jqg" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="Mdg-N7-mS2"/>
                             <constraint firstItem="uxh-eG-gSS" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="OGL-6d-mM4"/>
+                            <constraint firstItem="siT-2I-Jqg" firstAttribute="top" secondItem="Gp5-d4-ZIj" secondAttribute="bottom" constant="30" id="OMV-3g-cDE"/>
+                            <constraint firstItem="Gp5-d4-ZIj" firstAttribute="top" secondItem="uxh-eG-gSS" secondAttribute="bottom" constant="30" id="PZI-f3-Wjp"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="siT-2I-Jqg" secondAttribute="trailing" constant="16" id="ZhU-TW-AGx"/>
                             <constraint firstItem="Qnd-FX-u0C" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="gtb-aZ-lfN"/>
-                            <constraint firstItem="siT-2I-Jqg" firstAttribute="centerY" secondItem="PFI-Np-P2B" secondAttribute="centerY" id="n12-VF-cP8"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="uxh-eG-gSS" secondAttribute="trailing" constant="16" id="sp3-So-Ame"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carModelLabel" destination="F2s-cg-4zO" id="jOB-2w-RhC"/>
+                        <outlet property="customerNameTF" destination="OMl-RY-bib" id="U7K-qE-YvY"/>
+                        <outlet property="customerPhoneTF" destination="vk2-bS-er7" id="YkZ-Hu-RKk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-VW-w4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Y6b-pg-2PE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4999" y="72"/>
+            <point key="canvasLocation" x="5138" y="72"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="KUQ-se-INH">
             <objects>
-                <navigationController id="OCO-oV-BrB" sceneMemberID="viewController">
+                <navigationController id="OCO-oV-BrB" customClass="NavigationViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="XEU-up-cVh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ta6-f9-blw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -512,11 +523,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1E-1J-oxH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2779" y="72"/>
+            <point key="canvasLocation" x="2826" y="72"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Audi A4, 2020" width="1903" height="1410"/>
         <image name="SearchIMG" width="741" height="741"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
