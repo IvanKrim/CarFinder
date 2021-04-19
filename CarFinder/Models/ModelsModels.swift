@@ -44,6 +44,7 @@ struct Car {
 
 
 struct Cart {
-    var carModel: String
-    var carColor: String
+    let carModel: String
+    let carColor: String
+    let carPrice: String
 }

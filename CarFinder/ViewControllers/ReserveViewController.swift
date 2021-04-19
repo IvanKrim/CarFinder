@@ -89,8 +89,6 @@ extension ReserveViewController {
                 title: "Благодарим за заказ!",
                 message: "\(customerNameTF.text ?? "" ), наш менеджер скоро с вами свяжется."
             )
-//            dismiss(animated: true, completion: nil)
-//            customerContacts.append(customerNameTF.text ?? "")
         }
         
     }
