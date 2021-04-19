@@ -42,3 +42,9 @@ struct Car {
     }
 }
 
+
+struct Cart {
+    let carModel: String
+    let carColor: String
+    let carPrice: String
+}

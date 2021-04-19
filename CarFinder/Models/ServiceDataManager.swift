@@ -11,7 +11,6 @@ class DataManager {
     
     static let shared = DataManager()
     
-    
     let carModels = [
         "Audi A4", "BMW 3", "Mercedes-Benz E-class",
         "Mazda 6", "Mazda CX-9", "Ford Mustang",
