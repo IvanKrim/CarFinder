@@ -9,6 +9,9 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
 
+    
+    
+    
 //тестовый массив - вместо него надо использовать массив, создаваемый функцией кнопки "Сделать заказ"
     //массив надо записывать в датаменеджер в var(чтобы можно было редактировать - удалять из корзины)
     
@@ -25,6 +28,13 @@ class CartTableViewController: UITableViewController {
         
         title = "Ваш заказ"
     }
+    
+    
+    @IBAction func backBarButtonItemTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 
     // MARK: - Table view data source
     //настраиваем количество ячеек в таблице
