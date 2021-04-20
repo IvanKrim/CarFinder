@@ -60,6 +60,7 @@ class DetailViewController: UIViewController {
 
 // расширение, описывающее метод
 extension DetailViewController: ReserveVCDelegate {
+   
     func printCustomerInfo(
         name: String,
         phoneNumber: String,
@@ -68,5 +69,9 @@ extension DetailViewController: ReserveVCDelegate {
         print("Покупатель \(name), телефон: \(phoneNumber) забронировал \(selectedCar)"
         )
     }
+    
+    
+    
+    
 
 }
