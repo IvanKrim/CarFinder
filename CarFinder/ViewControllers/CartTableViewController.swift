@@ -18,10 +18,10 @@ class CartTableViewController: UITableViewController {
         
         //добавляем кнопку редактирования табличного содержимого и настраиваем его внешний вид (метод из коробки)
         navigationItem.rightBarButtonItem = editButtonItem
-        
-        title = "Ваш заказ"
+        //функция смены заголовка, если в корзине нет заказов (вынесена ниже в экстеншен)
+        changeTitle()
     }
-    
+  
     
     @IBAction func backBarButtonItemTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
@@ -59,10 +59,18 @@ class CartTableViewController: UITableViewController {
         
     }
     
-    
-    
-    
-    
-    
-    
+}
+
+
+//меняем заголовок в корзине, если в ней нет заказов
+extension CartTableViewController {
+    func changeTitle() {
+    if DataManager.shared.reservedCarsInCart.count == 1 {
+        title = "Ваш заказ"
+    } else if DataManager.shared.reservedCarsInCart.count > 1 {
+        title = "Ваши заказы"
+    } else {
+        title = "В корзине пусто"
+    }
+        }
 }
