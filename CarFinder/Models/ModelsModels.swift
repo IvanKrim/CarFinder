@@ -43,8 +43,11 @@ struct Car {
 }
 
 
+//модель для корзины
 struct Cart {
+    
     let carModel: String
     let carColor: String
     let carPrice: String
+    
 }

@@ -15,4 +15,12 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var carColorLabel: UILabel!
     @IBOutlet weak var carPriceLabel: UILabel!
 
+    // функция передающая свойства экземпляра в тектовые поля аутлетов, принимает объект с типом модели
+    func cellSetup(object: Cart) {
+        
+        nameYearLabel.text = object.carModel
+        carColorLabel.text = object.carColor
+        carPriceLabel.text = object.carPrice
+    }
+    
 }
