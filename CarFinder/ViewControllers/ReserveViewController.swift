@@ -17,6 +17,8 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var customerPhoneTF: UITextField!
     
     //MARK: - Public Properties
+
+    
     var car: Car!
     var delegate: ReserveVCDelegate!
     
@@ -43,8 +45,8 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - IB Actions
     @IBAction func callMeButtonPressed() {
+        addNewCar()
         showAlert()
-        
     }
     
     //MARK: - Public methods
@@ -57,6 +59,18 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    
+    //Функция, которая собирает заказанную машину для добавления в массив
+    //выше создана var: carInCart для записи.
+    private func addNewCar() {
+        let carModel = car.carModel
+        let carColor = car.carColor
+        let carPrice = car.carPrice
+        let carInCart = Cart(carModel: carModel, carColor: carColor, carPrice: carPrice)
+        DataManager.shared.reservedCarsInCart.append(carInCart)
+    }
+    
 }
 
 extension ReserveViewController {
@@ -87,7 +101,7 @@ extension ReserveViewController {
         } else {
             showAlertLogic(
                 title: "Благодарим за заказ!",
-                message: "\(customerNameTF.text ?? "" ), наш менеджер скоро с вами свяжется."
+                message: "\(customerNameTF.text ?? ""), наш менеджер скоро с вами свяжется."
             )
         }
         

@@ -9,6 +9,9 @@ import UIKit
 
 class FindWindowTableViewController: UITableViewController {
     
+    //MARK: IB Outlets
+
+    
     //MARK: - Public Properties
     
     var listOfCars: [Car]!
@@ -56,6 +59,8 @@ class FindWindowTableViewController: UITableViewController {
             //передаем значение из массива по индексу строки в переменную 
             detailVC.car = listOfCars[indexPath.row]
         }
+
+        
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
