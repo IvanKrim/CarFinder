@@ -12,7 +12,8 @@ protocol ReserveVCDelegate {
     func printCustomerInfo(
         name: String,
         phoneNumber: String,
-        selectedCar: String)
+        selectedCar: String
+    )
 }
 
 class DetailViewController: UIViewController {
@@ -26,6 +27,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var yearOfCarManufactureLabel: UILabel!
     @IBOutlet weak var carColorLabel: UILabel!
     @IBOutlet weak var carEngineLabel: UILabel!
+    
     
     
     //MARK: - Public Properties
@@ -60,18 +62,14 @@ class DetailViewController: UIViewController {
 
 // расширение, описывающее метод
 extension DetailViewController: ReserveVCDelegate {
-   
     func printCustomerInfo(
         name: String,
         phoneNumber: String,
         selectedCar: String
     ) {
-        print("Покупатель \(name), телефон: \(phoneNumber) забронировал \(selectedCar)"
-        )
+        print("Покупатель \(name), телефон: \(phoneNumber) забронировал \(selectedCar)")
     }
-    
-    
-    
-    
-
 }
+
+
+

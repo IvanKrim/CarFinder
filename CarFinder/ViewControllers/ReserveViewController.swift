@@ -13,10 +13,17 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     //MARK: - IB Outlets
     @IBOutlet weak var carModelLabel: UILabel!
     
+    @IBOutlet weak var detailLabel: UILabel!
+    
     @IBOutlet weak var customerNameTF: UITextField!
     @IBOutlet weak var customerPhoneTF: UITextField!
     
-    //MARK: - Public Properties
+    
+    @IBOutlet weak var createOrderButton: UIButton!
+    @IBOutlet weak var goToCartButton: UIButton!
+    
+    
+        //MARK: - Public Properties
 
     
     var car: Car!
@@ -35,6 +42,7 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         customerNameTF.delegate = self
         customerPhoneTF.delegate = self
         
+        goToCartButton.isHidden = true
     }
     
     // скрываем клавиатуру тапом по экрну
@@ -45,9 +53,15 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - IB Actions
     @IBAction func callMeButtonPressed() {
-        addNewCar()
         showAlert()
     }
+    
+    @IBAction func goToCartButtonTapped() {
+        
+    }
+    
+    
+    
     
     //MARK: - Public methods
     // добавляем метод для программирования кнопки return на клавиатуре
@@ -73,6 +87,8 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
 }
 
+
+//MARK: Alert Controller
 extension ReserveViewController {
     
     // добавление AlertController
@@ -83,10 +99,8 @@ extension ReserveViewController {
             preferredStyle: .alert
         )
         // Кнопка ОК
-        //let okActionButton = UIAlertAction(title: "OK", style: .default)
-        let goToTheCartActionButton = UIAlertAction(title: "Перейти в корзину", style: .default)
-        //alert.addAction(okActionButton)
-        alert.addAction(goToTheCartActionButton)
+        let okActionButton = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okActionButton)
         present(alert, animated: true)
         
     }
@@ -95,15 +109,33 @@ extension ReserveViewController {
         if customerNameTF.text == "" || customerPhoneTF.text == "" {
             showAlertLogic(
                 title: "Ошибка",
-                message: "Пожалуйста, укажите Имя и контактынй номер телефона."
+                message: "Пожалуйста, укажите Имя и контактный номер телефона."
             )
             
         } else {
+            addNewCar()
+            goToCart()
             showAlertLogic(
                 title: "Благодарим за заказ!",
-                message: "\(customerNameTF.text ?? ""), наш менеджер скоро с вами свяжется."
+                message: "\(customerNameTF.text ?? ""), наш менеджер скоро с вами свяжется. \n Ваш заказ находится в корзине."
             )
         }
+        
+    }
+    
+    
+    
+    
+}
+
+
+extension ReserveViewController {
+    func goToCart() {
+        createOrderButton.isHidden = true
+        goToCartButton.isHidden = false
+        customerNameTF.isHidden = true
+        customerPhoneTF.isHidden = true
+        detailLabel.isHidden = true
         
     }
 }

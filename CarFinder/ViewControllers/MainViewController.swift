@@ -28,10 +28,5 @@ class MainViewController: UIViewController {
         findWindowTableVC.listOfCars = listOfCars
         
     }
-    
-//    // возвращает пользователя на стартовый экран при нажатии кнопки на ReserveVC
-//    @IBAction func unwind(for segue: UIStoryboardSegue) {
-//        }
-    
 }
 
