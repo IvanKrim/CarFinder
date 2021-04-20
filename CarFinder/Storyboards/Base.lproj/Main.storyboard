@@ -550,7 +550,7 @@
         <!--N предложений-->
         <scene sceneID="EiC-1d-Q8F">
             <objects>
-                <tableViewController id="O4X-js-fZe" customClass="CartTVC" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="O4X-js-fZe" customClass="CartTableViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wcv-4Y-GxJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -610,10 +610,7 @@
                             <outlet property="delegate" destination="O4X-js-fZe" id="Hko-Px-mxW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="N предложений" id="ruf-Wj-peH">
-                        <barButtonItem key="leftBarButtonItem" title="Сохранить" image="checkmark.seal.fill" catalog="system" id="Y5d-F5-ivM"/>
-                        <barButtonItem key="rightBarButtonItem" title="Изменить" image="square.and.pencil" catalog="system" id="DgP-BH-LMf"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="N предложений" id="ruf-Wj-peH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqX-t0-A2W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -623,8 +620,6 @@
     <resources>
         <image name="SearchIMG" width="741" height="741"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
