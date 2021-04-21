@@ -9,7 +9,7 @@
 
 //MARK: - ЭТОТ КЛАСС СУЩЕСТВУЕТ НА ВСЯКИЙ(ПОКА НЕ УДАЛЯЕМ, ХОТЬ ОН И ПУСТОЙ)
 
-
+// удалять нельзя, через него идет переход по сегвею с main controller
 import UIKit
 
 class NavigationViewController: UINavigationController {

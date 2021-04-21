@@ -27,9 +27,9 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
 
     
     var car: Car!
-    var delegate: ReserveVCDelegate!
+//    var delegate: ReserveVCDelegate! УДАЛИТЬ
     
-    var customerContacts = ""
+//    var customerContacts = "" УДАЛИТЬ
     
     //MARK: - Override methods
     override func viewDidLoad() {

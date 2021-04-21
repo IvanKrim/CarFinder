@@ -10,7 +10,8 @@ import UIKit
 class CartTableViewController: UITableViewController {
 
     //MARK: - Public Properties
-    var delegate: ReserveVCDelegate!
+    
+//    var delegate: ReserveVCDelegate! УДАЛИТЬ
     
     //MARK: Override Methods
     override func viewDidLoad() {
