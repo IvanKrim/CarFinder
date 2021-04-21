@@ -20,7 +20,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var createOrderButton: UIButton!
-    @IBOutlet weak var goToCartButton: UIButton!
     
     
         //MARK: - Public Properties
@@ -41,8 +40,7 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         
         customerNameTF.delegate = self
         customerPhoneTF.delegate = self
-        
-        goToCartButton.isHidden = true
+
     }
     
     // скрываем клавиатуру тапом по экрну
@@ -98,8 +96,8 @@ extension ReserveViewController {
             message: message,
             preferredStyle: .alert
         )
-        // Кнопка ОК
-        let okActionButton = UIAlertAction(title: "OK", style: .default)
+        // Кнопка ОК + замыкание, которое выключает окно с TF для контактных данных, так пользователь увидит сверху корзину.
+        let okActionButton = UIAlertAction(title: "OK", style: .default) { dismissReserveVC in self.dismiss(animated: true, completion: nil) }
         alert.addAction(okActionButton)
         present(alert, animated: true)
         
@@ -114,7 +112,6 @@ extension ReserveViewController {
             
         } else {
             addNewCar()
-            goToCart()
             showAlertLogic(
                 title: "Благодарим за заказ!",
                 message: "\(customerNameTF.text ?? ""), наш менеджер скоро с вами свяжется. \n Ваш заказ находится в корзине."
@@ -128,14 +125,3 @@ extension ReserveViewController {
     
 }
 
-
-extension ReserveViewController {
-    func goToCart() {
-        createOrderButton.isHidden = true
-        goToCartButton.isHidden = false
-        customerNameTF.isHidden = true
-        customerPhoneTF.isHidden = true
-        detailLabel.isHidden = true
-        
-    }
-}
