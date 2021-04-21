@@ -8,14 +8,11 @@
 import UIKit
 
 class CartTableViewController: UITableViewController {
-
-    //MARK: - Public Properties
-    
-//    var delegate: ReserveVCDelegate! УДАЛИТЬ
     
     //MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
         
         //добавляем кнопку редактирования табличного содержимого и настраиваем его внешний вид (метод из коробки)
         navigationItem.rightBarButtonItem = editButtonItem
@@ -71,7 +68,7 @@ extension CartTableViewController {
     } else if DataManager.shared.reservedCarsInCart.count > 1 {
         title = "Ваши заказы"
     } else {
-        title = "В корзине пусто"
+        title = "Заказов нет"
     }
         }
 }
