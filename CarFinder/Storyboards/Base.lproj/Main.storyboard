@@ -104,8 +104,7 @@
                                         <segments>
                                             <segment title="Синий"/>
                                             <segment title="Белый"/>
-                                            <segment title=""/>
-                                            <segment title=""/>
+                                            <segment title="Красный"/>
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
@@ -125,6 +124,7 @@
                                         <segments>
                                             <segment title="Бензин"/>
                                             <segment title="Дизель"/>
+                                            <segment title="Электро"/>
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
@@ -138,7 +138,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-Ul-Rf6">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2020" minValue="2019" maxValue="2021" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-Ul-Rf6">
                                         <rect key="frame" x="-2" y="38" width="292" height="31"/>
                                         <color key="minimumTrackTintColor" red="0.80695317919064613" green="0.91568272656271277" blue="0.94344719457193882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </slider>
@@ -642,7 +642,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tIO-Lq-ORM"/>
+        <segue reference="19n-qC-wgU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SearchIMG" width="741" height="741"/>
