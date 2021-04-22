@@ -15,7 +15,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //MARK: - Private properties
     
-    private let myPickerData = DataManager.shared.carModels
+    private let carList = DataManager.shared.carModels
 
     
     //MARK: - IB Outlets
@@ -45,14 +45,29 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return myPickerData.count
+        return carList.count
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-     return myPickerData[row]
+     return carList[row]
     }
 
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        carBrandTextField.text = myPickerData[row]
+        carBrandTextField.text = carList[row]
     }
+    
+    //MARK: - Private Methods
+    
+    private func getCarModel() -> String {
+        return carBrandTextField.text ?? ""
+    }
+    
+//    private func getFilteredCar() -> Car {
+//        return Car(
+//            carModel: getCarModel(),
+//            carColor: <#T##String#>,
+//            carEngine: <#T##String#>,
+//            yearOfCarManufacture: <#T##String#>,
+//            carPrice: "добавить цену в сториборд")
+//    }
 }
