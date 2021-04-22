@@ -154,7 +154,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2020" minValue="2019" maxValue="2021" translatesAutoresizingMaskIntoConstraints="NO" id="rQv-3U-mKe">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4000000" minValue="0.0" maxValue="8000000" translatesAutoresizingMaskIntoConstraints="NO" id="rQv-3U-mKe">
                                         <rect key="frame" x="-2" y="38" width="292" height="31"/>
                                         <color key="minimumTrackTintColor" red="0.80695317919999998" green="0.91568272660000005" blue="0.94344719460000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </slider>
@@ -183,6 +183,7 @@
                                 </constraints>
                                 <state key="normal" title="Применить"/>
                                 <connections>
+                                    <action selector="applyFilterButtonPressed" destination="zI1-4h-CGE" eventType="touchUpInside" id="ttL-0y-Avc"/>
                                     <segue destination="q7A-mD-q6o" kind="unwind" unwindAction="unwindFor:" id="BzD-by-J5f"/>
                                 </connections>
                             </button>
@@ -212,6 +213,10 @@
                     </view>
                     <connections>
                         <outlet property="carBrandTextField" destination="5Qy-4I-ASp" id="cTV-W6-heA"/>
+                        <outlet property="carColorSC" destination="aWq-af-NWk" id="k9g-kJ-H1l"/>
+                        <outlet property="carEngineSC" destination="mKQ-uP-hlW" id="crZ-lS-Hcs"/>
+                        <outlet property="carPriceSlider" destination="rQv-3U-mKe" id="ZcC-75-Muk"/>
+                        <outlet property="carYearSlider" destination="5vJ-Ul-Rf6" id="OV9-Am-GLk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aeg-91-e8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
