@@ -11,8 +11,8 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //MARK: - Public Properties
     // не работает переход по сегвею с кнопки, разобраться
-//    var listOfCars: [Car]!
-
+    //    var listOfCars: [Car]!
+    
     //MARK: - Private properties
     
     private let carModelsList = DataManager.shared.carModels
@@ -33,6 +33,8 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var carYearLabel: UILabel!
     @IBOutlet weak var carPriceLabel: UILabel!
     
+    @IBOutlet weak var applyFilterButton: UIButton!
+    @IBOutlet weak var showResultButton: UIButton!
     
     //MARK: - Override Methods
     
@@ -48,18 +50,22 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         carYearLabel.text = String(Int(carYearSlider.value))
         carPriceLabel.text = String(Int(carPriceSlider.value))
         
+        // прячем кнопку Показать
+        showResultButton.isHidden = true
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailVC = segue.destination as? DetailViewController {
             detailVC.car = foundedCar
+            
         }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
-        {
-            view.endEditing(true) 
-        }
+    {
+        view.endEditing(true)
+    }
     
     
     //MARK: - IB Actions
@@ -80,27 +86,19 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func applyFilterButtonPressed() {
         
         compareCars(filteredCar: getFilteredCar())
-        
-        
-        if let car = foundedCar {
-            // черновая проверка работоспособности УДАЛИТЬ
-            print(car.carModel, car.yearOfCarManufacture, car.carPrice)
-            performSegue(withIdentifier: "segueFromFilterToDetail", sender: nil)
-        } else {
-            // черновая проверка работоспособности УДАЛИТЬ
-            print("Такого авто нет в списке!")
-            dismiss(animated: true, completion: nil)
-            
-//            alertCantFindCar()
-            
-        }
-        
+        showAlert()
+       
+    }
+    
+    // КНОПКА ПОКАЗАТЬ: должен быть переход на detailVC
+    @IBAction func showResultButtonPressed() {
         
     }
     
     
-    //MARK: - Public Methods
     
+    //MARK: - Public Methods
+    // настройка pickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -110,9 +108,9 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-     return carModelsList[row]
+        return carModelsList[row]
     }
-
+    
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         carBrandTextField.text = carModelsList[row]
     }
@@ -151,7 +149,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     private func getCarYear() -> String {
         let currentSliderValue = Int(round(carYearSlider.value))
         return String(currentSliderValue)
-
+        
     }
     
     // получаем цену в фильтре
@@ -189,22 +187,29 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
-    // вызов алертконтроллер, если невозможно подобрать авто по фильтрам
-    private func alertCantFindCar() {
+    // вызов алертконтроллер по результатам фильтра
+    private func alertFilterCar(title: String, message: String) {
         let alertController = UIAlertController(
-            title: "Ошибка!",
-            message: "Ничего не найдено. Попробуйте изменить фильтры.",
+            title: title,
+            message: message,
             preferredStyle: .alert
         )
         
         let okButton = UIAlertAction(
-            title: "Попробовать снова",
+            title: "OK",
             style: .default
         )
         alertController.addAction(okButton)
-        alertController.present(self, animated: true)
+        present(alertController, animated: true)
         
     }
-
+    
+    private func showAlert() {
+        if foundedCar != nil {
+            alertFilterCar(title: "Отлично!", message: "По вашему запросу авто найдено")
+        } else {
+            alertFilterCar(title: "Ошибка", message: "Авто не найдено. Попробуйте изменить фильтры")
+        }
+    }
 }
 

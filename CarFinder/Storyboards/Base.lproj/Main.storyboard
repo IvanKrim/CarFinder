@@ -218,7 +218,20 @@
                                 <state key="normal" title="Применить"/>
                                 <connections>
                                     <action selector="applyFilterButtonPressed" destination="zI1-4h-CGE" eventType="touchUpInside" id="ttL-0y-Avc"/>
-                                    <segue destination="5qF-uo-pFj" kind="presentation" identifier="segueFromFilterToDetail" id="nj8-cz-gLC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccg-Sw-9GT">
+                                <rect key="frame" x="16" y="483" width="288" height="45"/>
+                                <color key="backgroundColor" red="0.69678539037704468" green="0.93292111158370972" blue="0.74417906999588013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="thh-DQ-Jre"/>
+                                    <constraint firstAttribute="height" constant="45" id="yQD-MR-sBK"/>
+                                </constraints>
+                                <state key="normal" title="Показать"/>
+                                <connections>
+                                    <action selector="applyFilterButtonPressed" destination="zI1-4h-CGE" eventType="touchUpInside" id="WnO-Dt-8yA"/>
+                                    <action selector="showResultButtonPressed" destination="zI1-4h-CGE" eventType="touchUpInside" id="pXL-Ko-tXO"/>
+                                    <segue destination="5qF-uo-pFj" kind="presentation" identifier="" id="RzQ-Zf-7wg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -226,7 +239,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I3w-ov-5g0" firstAttribute="top" secondItem="nWl-Xo-3kg" secondAttribute="bottom" constant="16" id="8nk-rJ-3Zy"/>
+                            <constraint firstItem="aBl-aZ-jM3" firstAttribute="trailing" secondItem="Ccg-Sw-9GT" secondAttribute="trailing" constant="16" id="AEG-YK-TNt"/>
                             <constraint firstItem="nWl-Xo-3kg" firstAttribute="top" secondItem="aBl-aZ-jM3" secondAttribute="top" constant="16" id="HcE-gV-fwq"/>
+                            <constraint firstItem="aBl-aZ-jM3" firstAttribute="bottom" secondItem="Ccg-Sw-9GT" secondAttribute="bottom" constant="20" id="IzV-gJ-hqf"/>
                             <constraint firstAttribute="trailing" secondItem="E44-d6-WNN" secondAttribute="trailing" constant="16" id="KMN-aK-yBB"/>
                             <constraint firstItem="hNd-iw-QvG" firstAttribute="top" secondItem="9Xi-jg-oH6" secondAttribute="bottom" constant="16" id="LUI-DG-4gy"/>
                             <constraint firstItem="aBl-aZ-jM3" firstAttribute="trailing" secondItem="93X-1I-XfY" secondAttribute="trailing" constant="16" id="Lx5-VR-Vq1"/>
@@ -237,6 +252,7 @@
                             <constraint firstItem="93X-1I-XfY" firstAttribute="leading" secondItem="aBl-aZ-jM3" secondAttribute="leading" constant="16" id="biI-7E-EsK"/>
                             <constraint firstItem="aBl-aZ-jM3" firstAttribute="trailing" secondItem="9Xi-jg-oH6" secondAttribute="trailing" constant="16" id="dWY-pw-ypI"/>
                             <constraint firstItem="E44-d6-WNN" firstAttribute="leading" secondItem="aBl-aZ-jM3" secondAttribute="leading" constant="16" id="eIK-9X-GsR"/>
+                            <constraint firstItem="Ccg-Sw-9GT" firstAttribute="leading" secondItem="aBl-aZ-jM3" secondAttribute="leading" constant="16" id="gTL-g5-OoX"/>
                             <constraint firstItem="aBl-aZ-jM3" firstAttribute="trailing" secondItem="nWl-Xo-3kg" secondAttribute="trailing" constant="16" id="giQ-75-1CE"/>
                             <constraint firstItem="9Xi-jg-oH6" firstAttribute="top" secondItem="I3w-ov-5g0" secondAttribute="bottom" constant="16" id="kN9-pq-yvN"/>
                             <constraint firstItem="I3w-ov-5g0" firstAttribute="leading" secondItem="On8-t4-XBL" secondAttribute="leading" constant="16" id="oef-dU-P1u"/>
@@ -246,6 +262,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="applyFilterButton" destination="93X-1I-XfY" id="kKe-bf-N9w"/>
                         <outlet property="carBrandTextField" destination="5Qy-4I-ASp" id="cTV-W6-heA"/>
                         <outlet property="carColorSC" destination="aWq-af-NWk" id="k9g-kJ-H1l"/>
                         <outlet property="carEngineSC" destination="mKQ-uP-hlW" id="crZ-lS-Hcs"/>
@@ -253,6 +270,7 @@
                         <outlet property="carPriceSlider" destination="rQv-3U-mKe" id="ZcC-75-Muk"/>
                         <outlet property="carYearLabel" destination="DsB-k2-hMt" id="pmq-0b-xj2"/>
                         <outlet property="carYearSlider" destination="5vJ-Ul-Rf6" id="OV9-Am-GLk"/>
+                        <outlet property="showResultButton" destination="Ccg-Sw-9GT" id="0ot-qu-vT5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aeg-91-e8u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -345,11 +363,11 @@
             <objects>
                 <viewController id="5qF-uo-pFj" customClass="DetailViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0nG-bF-MaI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aQx-or-a8K">
-                                <rect key="frame" x="16" y="16" width="288" height="55"/>
+                                <rect key="frame" x="16" y="60" width="288" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название и год модели" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-7l-GNu">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
@@ -370,7 +388,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUU-7j-iVt">
-                                <rect key="frame" x="16" y="473" width="288" height="45"/>
+                                <rect key="frame" x="16" y="493" width="288" height="45"/>
                                 <color key="backgroundColor" red="0.89182609319999995" green="0.96845239400000005" blue="0.99787062410000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eB8-Wr-ALo"/>
@@ -381,19 +399,19 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-Ji-ZUl">
-                                <rect key="frame" x="16" y="87" width="288" height="216"/>
+                                <rect key="frame" x="16" y="131" width="288" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1v3-Ji-ZUl" secondAttribute="height" multiplier="4:3" id="K6J-0Z-nqc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Характеристики" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-Rl-DGW">
-                                <rect key="frame" x="16" y="319" width="288" height="24"/>
+                                <rect key="frame" x="16" y="363" width="288" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-gM-PwI">
-                                <rect key="frame" x="16" y="359" width="288" height="74"/>
+                                <rect key="frame" x="16" y="403" width="288" height="74"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-qA-4S0">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="74"/>
@@ -701,7 +719,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="19n-qC-wgU"/>
-        <segue reference="nj8-cz-gLC"/>
+        <segue reference="47c-DT-9Mo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SearchIMG" width="741" height="741"/>
