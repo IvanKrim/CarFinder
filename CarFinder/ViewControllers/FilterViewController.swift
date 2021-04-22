@@ -30,6 +30,10 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var carYearSlider: UISlider!
     @IBOutlet weak var carPriceSlider: UISlider!
     
+    @IBOutlet weak var carYearLabel: UILabel!
+    @IBOutlet weak var carPriceLabel: UILabel!
+    
+    
     //MARK: - Override Methods
     
     override func viewDidLoad() {
@@ -37,10 +41,12 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         view.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         
         let picker = UIPickerView()
-        
         carBrandTextField.inputView = picker
-        
         picker.delegate = self
+        
+        // при загрузке экрана значения слайдеров в лейблах
+        carYearLabel.text = String(Int(carYearSlider.value))
+        carPriceLabel.text = String(Int(carPriceSlider.value))
         
     }
     
@@ -52,7 +58,19 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //MARK: - IB Actions
     
-    // применяем фильтр к списку авто
+    // СЛАЙДЕРЫ: меняем значения лейблов
+    @IBAction func carYearSliderChanged() {
+        carYearLabel.text = String(Int(carYearSlider.value))
+    }
+    
+    @IBAction func carPriceSliderChanged() {
+        // округляем значения слайдера для лейбла
+        let step: Float = 100000
+        let currentSliderValue = round(carPriceSlider.value / step) * step
+        carPriceLabel.text = String(Int(currentSliderValue))
+    }
+    
+    // КНОПКА ПРИМЕНИТЬ: применяем фильтр к списку авто
     @IBAction func applyFilterButtonPressed() {
         
         compareCars(filteredCar: getFilteredCar())
@@ -139,7 +157,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             yearOfCarManufacture: getCarYear(),
             carPrice: getCarPrice()
         )
-        // черновой принт при сборке удалить
+        // черновой принт, при сборке удалить
         print(filteredCar.carModel, filteredCar.carColor, filteredCar.carEngine,
               filteredCar.yearOfCarManufacture, filteredCar.carPrice)
         return filteredCar

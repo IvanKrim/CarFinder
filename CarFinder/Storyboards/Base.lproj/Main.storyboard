@@ -154,10 +154,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4000000" minValue="0.0" maxValue="8000000" translatesAutoresizingMaskIntoConstraints="NO" id="rQv-3U-mKe">
-                                        <rect key="frame" x="-2" y="38" width="292" height="31"/>
-                                        <color key="minimumTrackTintColor" red="0.80695317919999998" green="0.91568272660000005" blue="0.94344719460000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iCh-po-5Zx">
+                                        <rect key="frame" x="0.0" y="38" width="288" height="30"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4000000" minValue="0.0" maxValue="8000000" translatesAutoresizingMaskIntoConstraints="NO" id="rQv-3U-mKe">
+                                                <rect key="frame" x="-2" y="0.0" width="184" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="AcX-jj-8lc"/>
+                                                </constraints>
+                                                <color key="minimumTrackTintColor" red="0.80695317919999998" green="0.91568272660000005" blue="0.94344719460000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="carPriceSliderChanged" destination="zI1-4h-CGE" eventType="valueChanged" id="wcS-tT-VZh"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCK-eo-Bj7">
+                                                <rect key="frame" x="246.5" y="0.0" width="41.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hNd-iw-QvG">
@@ -169,10 +186,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2020" minValue="2019" maxValue="2021" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-Ul-Rf6">
-                                        <rect key="frame" x="-2" y="38" width="292" height="31"/>
-                                        <color key="minimumTrackTintColor" red="0.80695317919064613" green="0.91568272656271277" blue="0.94344719457193882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </slider>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gJL-gN-g3N">
+                                        <rect key="frame" x="0.0" y="38" width="288" height="30"/>
+                                        <subviews>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2020" minValue="2019" maxValue="2021" translatesAutoresizingMaskIntoConstraints="NO" id="5vJ-Ul-Rf6">
+                                                <rect key="frame" x="-2" y="0.0" width="184" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="ScZ-bx-wmb"/>
+                                                </constraints>
+                                                <color key="minimumTrackTintColor" red="0.80695317919064613" green="0.91568272656271277" blue="0.94344719457193882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="carYearSliderChanged" destination="zI1-4h-CGE" eventType="valueChanged" id="hcO-jZ-PoU"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DsB-k2-hMt">
+                                                <rect key="frame" x="246.5" y="0.0" width="41.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93X-1I-XfY">
@@ -215,7 +249,9 @@
                         <outlet property="carBrandTextField" destination="5Qy-4I-ASp" id="cTV-W6-heA"/>
                         <outlet property="carColorSC" destination="aWq-af-NWk" id="k9g-kJ-H1l"/>
                         <outlet property="carEngineSC" destination="mKQ-uP-hlW" id="crZ-lS-Hcs"/>
+                        <outlet property="carPriceLabel" destination="oCK-eo-Bj7" id="nqw-OU-lig"/>
                         <outlet property="carPriceSlider" destination="rQv-3U-mKe" id="ZcC-75-Muk"/>
+                        <outlet property="carYearLabel" destination="DsB-k2-hMt" id="pmq-0b-xj2"/>
                         <outlet property="carYearSlider" destination="5vJ-Ul-Rf6" id="OV9-Am-GLk"/>
                     </connections>
                 </viewController>
