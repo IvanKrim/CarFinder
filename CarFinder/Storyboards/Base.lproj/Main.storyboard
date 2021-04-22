@@ -648,7 +648,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cartCell" rowHeight="59" id="hcm-7d-0g1" customClass="CartTableViewCell" customModule="CarFinder" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cartCell" rowHeight="59" id="hcm-7d-0g1" customClass="CartTableViewCell" customModule="CarFinder" customModuleProvider="target">
                                 <rect key="frame" x="16" y="55.5" width="288" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hcm-7d-0g1" id="84T-Eo-Q6l">
@@ -717,9 +717,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="19n-qC-wgU"/>
-
         <segue reference="47c-DT-9Mo"/>
-
+        <segue reference="ye0-yR-FOG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SearchIMG" width="741" height="741"/>
