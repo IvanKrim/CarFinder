@@ -12,22 +12,16 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - IB Outlets
     @IBOutlet weak var carModelLabel: UILabel!
-    
     @IBOutlet weak var detailLabel: UILabel!
     
     @IBOutlet weak var customerNameTF: UITextField!
     @IBOutlet weak var customerPhoneTF: UITextField!
     
-    
     @IBOutlet weak var createOrderButton: UIButton!
     
-    
-        //MARK: - Public Properties
-
-    
+    //MARK: - Public Properties
     var car: Car!
 //    var delegate: ReserveVCDelegate! УДАЛИТЬ
-    
 //    var customerContacts = "" УДАЛИТЬ
     
     //MARK: - Override methods
@@ -40,7 +34,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         
         customerNameTF.delegate = self
         customerPhoneTF.delegate = self
-
     }
     
     // скрываем клавиатуру тапом по экрну
@@ -53,13 +46,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     @IBAction func callMeButtonPressed() {
         showAlert()
     }
-    
-    @IBAction func goToCartButtonTapped() {
-        
-    }
-    
-    
-    
     
     //MARK: - Public methods
     // добавляем метод для программирования кнопки return на клавиатуре
@@ -74,19 +60,18 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     
     //Функция, которая собирает заказанную машину для добавления в массив
-    //выше создана var: carInCart для записи.
     private func addNewCar() {
-        let carModel = car.carModel
-        let carColor = car.carColor
-        let carPrice = car.carPrice
-        let carInCart = Cart(carModel: carModel, carColor: carColor, carPrice: carPrice)
+        let carInCart = Cart(carModel: car.carModel, carColor: car.carColor, carPrice: car.carPrice)
         DataManager.shared.reservedCarsInCart.append(carInCart)
     }
+    
+    
+    
     
 }
 
 
-//MARK: Alert Controller
+    //MARK: Alert Controller
 extension ReserveViewController {
     
     // добавление AlertController
@@ -117,7 +102,6 @@ extension ReserveViewController {
                 message: "\(customerNameTF.text ?? ""), наш менеджер скоро с вами свяжется. \n Ваш заказ находится в корзине."
             )
         }
-        
     }
     
     

@@ -54,6 +54,7 @@ class CartTableViewController: UITableViewController {
         
         DataManager.shared.reservedCarsInCart.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
+        title = "Заказов нет"
         
     }
     
@@ -69,6 +70,7 @@ extension CartTableViewController {
         title = "Ваши заказы"
     } else {
         title = "Заказов нет"
+        
     }
         }
 }

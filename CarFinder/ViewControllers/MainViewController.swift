@@ -10,7 +10,6 @@ import UIKit
 class MainViewController: UIViewController {
     
     //MARK: - Private Properties
-    
     private let listOfCars = Car.getCarInfo()
     
     //MARK: - Override Methods
