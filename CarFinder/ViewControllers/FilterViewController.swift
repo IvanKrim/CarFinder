@@ -16,6 +16,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //MARK: - Private properties
     
     private let carModelsList = DataManager.shared.carModels
+    private let carColorList = DataManager.shared.carColors
     // временный инициализатор
     private let listOfCars = Car.getCarInfo()
     private var foundedCar: Car?
@@ -23,8 +24,8 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //MARK: - IB Outlets
     
     @IBOutlet weak var carBrandTextField: UITextField!
+    @IBOutlet weak var carColorTextField: UITextField!
     
-    @IBOutlet weak var carColorSC: UISegmentedControl!
     @IBOutlet weak var carEngineSC: UISegmentedControl!
     
     @IBOutlet weak var carYearSlider: UISlider!
@@ -38,15 +39,19 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //MARK: - Override Methods
     
+    let pickerModel = UIPickerView()
+    let pickerColor = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
 
+        carBrandTextField.inputView = pickerModel
+        carColorTextField.inputView = pickerColor
         
-        let picker = UIPickerView()
-        carBrandTextField.inputView = picker
-        picker.delegate = self
+        pickerModel.delegate = self
+        pickerColor.delegate = self
         
         // при загрузке экрана значения слайдеров в лейблах
         carYearLabel.text = String(Int(carYearSlider.value))
@@ -97,8 +102,6 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     
-    
-    
     //MARK: - Public Methods
     // настройка pickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -106,15 +109,32 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return carModelsList.count
+        switch pickerView {
+        case pickerModel:
+            return carModelsList.count
+        default:
+            return carColorList.count
+        }
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return carModelsList[row]
+        switch pickerView {
+        case pickerModel:
+            return carModelsList[row]
+        default:
+            return carColorList[row]
+        }
     }
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        carBrandTextField.text = carModelsList[row]
+        switch pickerView {
+        case pickerModel:
+            carBrandTextField.text = carModelsList[row]
+        default:
+            carColorTextField.text = carColorList[row]
+        }
+        
+        
     }
     
     //MARK: - Private Methods
@@ -122,18 +142,13 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     // получаем марку в фильтре
     private func getCarModel() -> String {
         return carBrandTextField.text ?? ""
-        
+    
     }
     
     // получаем цвет в фильтре
     private func getCarColor() -> String {
-        var carColor = ""
-        switch carColorSC.selectedSegmentIndex {
-        case 0: carColor = "Синий"
-        case 1: carColor = "Белый"
-        default: carColor = "Красный"
-        }
-        return carColor
+        return carColorTextField.text ?? ""
+
     }
     
     // получаем тип двигателя в фильтре
