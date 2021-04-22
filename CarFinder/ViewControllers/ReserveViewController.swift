@@ -20,7 +20,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var createOrderButton: UIButton!
-    @IBOutlet weak var goToCartButton: UIButton!
     
     
         //MARK: - Public Properties
@@ -35,14 +34,13 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = #colorLiteral(red: 0.8049663901, green: 0.7776784301, blue: 0.8425303102, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
         
         carModelLabel.text = car.fullVehicleInformation
         
         customerNameTF.delegate = self
         customerPhoneTF.delegate = self
-        
-        goToCartButton.isHidden = true
+
     }
     
     // скрываем клавиатуру тапом по экрну
@@ -98,8 +96,8 @@ extension ReserveViewController {
             message: message,
             preferredStyle: .alert
         )
-        // Кнопка ОК
-        let okActionButton = UIAlertAction(title: "OK", style: .default)
+        // Кнопка ОК + замыкание, которое выключает окно с TF для контактных данных, так пользователь увидит сверху корзину.
+        let okActionButton = UIAlertAction(title: "OK", style: .default) { dismissReserveVC in self.dismiss(animated: true, completion: nil) }
         alert.addAction(okActionButton)
         present(alert, animated: true)
         
@@ -114,7 +112,6 @@ extension ReserveViewController {
             
         } else {
             addNewCar()
-            goToCart()
             showAlertLogic(
                 title: "Благодарим за заказ!",
                 message: "\(customerNameTF.text ?? ""), наш менеджер скоро с вами свяжется. \n Ваш заказ находится в корзине."
@@ -128,14 +125,3 @@ extension ReserveViewController {
     
 }
 
-
-extension ReserveViewController {
-    func goToCart() {
-        createOrderButton.isHidden = true
-        goToCartButton.isHidden = false
-        customerNameTF.isHidden = true
-        customerPhoneTF.isHidden = true
-        detailLabel.isHidden = true
-        
-    }
-}
