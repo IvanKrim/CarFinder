@@ -50,6 +50,12 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailVC = segue.destination as? DetailViewController {
+            detailVC.car = foundedCar
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
         {
             view.endEditing(true) 
@@ -75,12 +81,18 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         compareCars(filteredCar: getFilteredCar())
         
-        // черновая проверка работоспособности
+        
         if let car = foundedCar {
+            // черновая проверка работоспособности УДАЛИТЬ
             print(car.carModel, car.yearOfCarManufacture, car.carPrice)
+            performSegue(withIdentifier: "segueFromFilterToDetail", sender: nil)
         } else {
+            // черновая проверка работоспособности УДАЛИТЬ
             print("Такого авто нет в списке!")
-            print(foundedCar?.carModel, foundedCar?.yearOfCarManufacture, foundedCar?.carPrice)
+            dismiss(animated: true, completion: nil)
+            
+//            alertCantFindCar()
+            
         }
         
         
@@ -174,10 +186,25 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             guard car.carPrice <= filteredCar.carPrice else {continue}
             
             foundedCar = car
-            
-      
+        }
     }
-}
+    
+    // вызов алертконтроллер, если невозможно подобрать авто по фильтрам
+    private func alertCantFindCar() {
+        let alertController = UIAlertController(
+            title: "Ошибка!",
+            message: "Ничего не найдено. Попробуйте изменить фильтры.",
+            preferredStyle: .alert
+        )
+        
+        let okButton = UIAlertAction(
+            title: "Попробовать снова",
+            style: .default
+        )
+        alertController.addAction(okButton)
+        alertController.present(self, animated: true)
+        
+    }
 
 }
 
