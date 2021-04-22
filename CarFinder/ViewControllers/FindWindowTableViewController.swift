@@ -59,6 +59,10 @@ class FindWindowTableViewController: UITableViewController {
             //передаем значение из массива по индексу строки в переменную 
             detailVC.car = listOfCars[indexPath.row]
         }
+        
+        
+        
+        
 
         
     }
