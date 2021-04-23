@@ -10,7 +10,6 @@ import UIKit
 class MainViewController: UIViewController {
     
     //MARK: Outlets
-    
     @IBOutlet weak var needAutoButton: UIButton!
     
     //MARK: - Private Properties
@@ -19,19 +18,14 @@ class MainViewController: UIViewController {
     //MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         needAutoButton.layer.cornerRadius = 10
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         // передаю массив через navigation controller на findwindow controller
-        guard let navigationVC = segue.destination as? NavigationViewController else { return }
+        guard let navigationVC = segue.destination as? UINavigationController else { return }
         let findWindowTableVC = navigationVC.topViewController as! FindWindowTableViewController
-        
         findWindowTableVC.listOfCars = listOfCars
-        
     }
 }
 
