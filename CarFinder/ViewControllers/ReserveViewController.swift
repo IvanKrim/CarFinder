@@ -19,10 +19,10 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var createOrderButton: UIButton!
     @IBOutlet weak var addAnotherOrderButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     
     //MARK: - Public Properties
-    
     var car: Car!
     
     //MARK: - Override methods
@@ -30,24 +30,21 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         createOrderButton.layer.cornerRadius = 10
         addAnotherOrderButton.layer.cornerRadius = 10
+        cancelButton.layer.cornerRadius = 10
+        view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
+        carModelLabel.text = car.fullVehicleInformation
         
         if DataManager.shared.reservedCarsInCart.count > 0 {
             detailLabel.text = "Пожалуйста, подтвердите добавление \(car.fullVehicleInformation) к существующему заказу"
-            
-            
             customerNameTF.isHidden = true
             customerPhoneTF.isHidden = true
             createOrderButton.isHidden = true
             addAnotherOrderButton.isHidden = false
         } else {
             addAnotherOrderButton.isHidden = true
+            cancelButton.isHidden = true
         }
-        
-        
-        view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
-        
-        carModelLabel.text = car.fullVehicleInformation
-        
+
         customerNameTF.delegate = self
         customerPhoneTF.delegate = self
     }
@@ -59,13 +56,19 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - IB Actions
-    
     @IBAction func callMeButtonPressed() {
         showAlert()
     }
     
     @IBAction func addAnotherButtonPressed() {
+        showAlertToAnotherReserve(
+            title: "Благодарим за заказ!",
+            message: "Ваш заказ добавлен к списку заказов."
+        )
         addNewCar()
+    }
+
+    @IBAction func cancelButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
     
@@ -84,8 +87,8 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
 
     //Функция, которая собирает заказанную машину для добавления в массив
     private func addNewCar() {
-        let carInCart = Cart(carModel: car.carModel, carColor: car.carColor, carPrice: car.carPrice)
-        DataManager.shared.reservedCarsInCart.append(carInCart)
+        let reservedCar = Cart(carModel: car.carModel, carColor: car.carColor, carPrice: car.carPrice)
+        DataManager.shared.reservedCarsInCart.append(reservedCar)
     }
 }
 
@@ -119,6 +122,19 @@ extension ReserveViewController {
             )
         }
     }
+    
+    //Алерт для последующих заказов, когда в корзине есть уже минимум 1 заказ
+    private func showAlertToAnotherReserve(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
+        let okActionButton = UIAlertAction(title: "OK", style: .default) { dismissReserveVC in self.dismiss(animated: true, completion: nil) }
+        alert.addAction(okActionButton)
+        present(alert, animated: true)
+}
+    
     
     
     

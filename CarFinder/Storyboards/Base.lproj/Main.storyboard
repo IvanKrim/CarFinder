@@ -579,24 +579,41 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-gy-aEo">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="if2-5D-BP5">
                                 <rect key="frame" x="16" y="443" width="288" height="45"/>
-                                <color key="backgroundColor" red="0.88901847599999995" green="0.96813887359999995" blue="0.99994319679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="8Tc-AZ-UiE"/>
-                                </constraints>
-                                <state key="normal" title="Добавить автомобиль к заказу"/>
-                                <connections>
-                                    <action selector="addAnotherButtonPressed" destination="Q0k-he-T6V" eventType="touchUpInside" id="7mE-S5-aTv"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-gy-aEo">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="45"/>
+                                        <color key="backgroundColor" red="0.88901847599999995" green="0.96813887359999995" blue="0.99994319679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="8Tc-AZ-UiE"/>
+                                        </constraints>
+                                        <state key="normal" title="Добавить"/>
+                                        <connections>
+                                            <action selector="addAnotherButtonPressed" destination="Q0k-he-T6V" eventType="touchUpInside" id="7mE-S5-aTv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef9-9o-rZa">
+                                        <rect key="frame" x="149" y="0.0" width="139" height="45"/>
+                                        <color key="backgroundColor" red="0.88901847599999995" green="0.96813887359999995" blue="0.99994319679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="zzW-BI-NyW"/>
+                                        </constraints>
+                                        <state key="normal" title="Отмена">
+                                            <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonTapped" destination="Q0k-he-T6V" eventType="touchUpInside" id="ZEY-kI-82D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VyF-uR-3F2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gp5-d4-ZIj" secondAttribute="trailing" constant="16" id="3aE-nP-SFP"/>
                             <constraint firstItem="uxh-eG-gSS" firstAttribute="top" secondItem="VyF-uR-3F2" secondAttribute="top" constant="25" id="77y-ZG-JlX"/>
-                            <constraint firstItem="VyF-uR-3F2" firstAttribute="bottom" secondItem="XVC-gy-aEo" secondAttribute="bottom" constant="60" id="7FR-K5-fh9"/>
                             <constraint firstItem="Gp5-d4-ZIj" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="8GW-7a-rOX"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="bottom" secondItem="Qnd-FX-u0C" secondAttribute="bottom" constant="60" id="8t6-TU-xTb"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="Qnd-FX-u0C" secondAttribute="trailing" constant="16" id="Cqr-aR-twV"/>
@@ -604,15 +621,17 @@
                             <constraint firstItem="uxh-eG-gSS" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="OGL-6d-mM4"/>
                             <constraint firstItem="siT-2I-Jqg" firstAttribute="top" secondItem="Gp5-d4-ZIj" secondAttribute="bottom" constant="30" id="OMV-3g-cDE"/>
                             <constraint firstItem="Gp5-d4-ZIj" firstAttribute="top" secondItem="uxh-eG-gSS" secondAttribute="bottom" constant="30" id="PZI-f3-Wjp"/>
-                            <constraint firstItem="XVC-gy-aEo" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="T5t-a6-Gr7"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="siT-2I-Jqg" secondAttribute="trailing" constant="16" id="ZhU-TW-AGx"/>
-                            <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="XVC-gy-aEo" secondAttribute="trailing" constant="16" id="geE-KQ-y73"/>
+                            <constraint firstItem="VyF-uR-3F2" firstAttribute="bottom" secondItem="if2-5D-BP5" secondAttribute="bottom" constant="60" id="ghv-yq-SIl"/>
                             <constraint firstItem="Qnd-FX-u0C" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="gtb-aZ-lfN"/>
+                            <constraint firstItem="if2-5D-BP5" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="lPF-hb-1Z2"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="uxh-eG-gSS" secondAttribute="trailing" constant="16" id="sp3-So-Ame"/>
+                            <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="if2-5D-BP5" secondAttribute="trailing" constant="16" id="usb-uV-Krc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addAnotherOrderButton" destination="XVC-gy-aEo" id="nOf-uP-6Ra"/>
+                        <outlet property="cancelButton" destination="ef9-9o-rZa" id="DfA-BI-XDy"/>
                         <outlet property="carModelLabel" destination="F2s-cg-4zO" id="jOB-2w-RhC"/>
                         <outlet property="createOrderButton" destination="Qnd-FX-u0C" id="LLq-aw-U93"/>
                         <outlet property="customerNameTF" destination="OMl-RY-bib" id="U7K-qE-YvY"/>
@@ -622,7 +641,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x2D-VW-w4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5404" y="98"/>
+            <point key="canvasLocation" x="5403.75" y="97.183098591549296"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ptZ-aG-Ofq">

@@ -13,7 +13,6 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
-        
         //добавляем кнопку редактирования табличного содержимого и настраиваем его внешний вид (метод из коробки)
         navigationItem.rightBarButtonItem = editButtonItem
         //функция смены заголовка, если в корзине нет заказов (вынесена ниже в экстеншен)
