@@ -15,7 +15,6 @@
 		0E863A80262A2F7E00027776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E863A7E262A2F7E00027776 /* LaunchScreen.storyboard */; };
 		0E863AB4262B81B300027776 /* ServiceDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E863AB3262B81B300027776 /* ServiceDataManager.swift */; };
 		0E863AC4262E215400027776 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E863AC3262E215400027776 /* CartTableViewController.swift */; };
-		C468D473262B884C008F3028 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C468D472262B884C008F3028 /* NavigationViewController.swift */; };
 		C4846F07262A372B00309036 /* ModelsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4846F06262A372B00309036 /* ModelsModels.swift */; };
 		C48C6B6D262E2D3A00BC0B94 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48C6B6C262E2D3A00BC0B94 /* CartTableViewCell.swift */; };
 		C48FD3E2262AD892003C7AF5 /* FindWindowTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48FD3E1262AD892003C7AF5 /* FindWindowTableViewController.swift */; };
@@ -36,7 +35,6 @@
 		0E863A81262A2F7E00027776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E863AB3262B81B300027776 /* ServiceDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDataManager.swift; sourceTree = "<group>"; };
 		0E863AC3262E215400027776 /* CartTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
-		C468D472262B884C008F3028 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		C4846F06262A372B00309036 /* ModelsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsModels.swift; sourceTree = "<group>"; };
 		C48C6B6C262E2D3A00BC0B94 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		C48FD3E1262AD892003C7AF5 /* FindWindowTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWindowTableViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				0E863A77262A2F7D00027776 /* MainViewController.swift */,
-				C468D472262B884C008F3028 /* NavigationViewController.swift */,
 				C48FD3E1262AD892003C7AF5 /* FindWindowTableViewController.swift */,
 				C48FD3E4262ADA97003C7AF5 /* FilterViewController.swift */,
 				0E863AC3262E215400027776 /* CartTableViewController.swift */,
@@ -208,7 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C48FD3E5262ADA97003C7AF5 /* FilterViewController.swift in Sources */,
-				C468D473262B884C008F3028 /* NavigationViewController.swift in Sources */,
 				C48FD3EB262ADC58003C7AF5 /* ReserveViewController.swift in Sources */,
 				0E863A78262A2F7D00027776 /* MainViewController.swift in Sources */,
 				C48FD3E2262AD892003C7AF5 /* FindWindowTableViewController.swift in Sources */,
