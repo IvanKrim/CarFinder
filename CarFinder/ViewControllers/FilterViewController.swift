@@ -17,6 +17,9 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     private let carModelsList = DataManager.shared.carModels
     private let carColorList = DataManager.shared.carColors
+    
+    private var changeFilter: Int = 0
+    
     // временный инициализатор
     private let listOfCars = Car.getCarInfo()
     private var foundedCar: Car?
@@ -93,7 +96,9 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBAction func applyFilterButtonPressed() {
         
         compareCars(filteredCar: getFilteredCar())
-        showAlert()
+        
+        showAlert(filter: helperInFilter(changeFilter: changeFilter))
+        
        
     }
     
@@ -103,6 +108,20 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     //MARK: - Public Methods
+    
+    //убираем дубликаты из элементов массива
+    func removeDuplicateElements(array: [String]) -> [String] {
+        var arrayWithUniqueElements: [String] = []
+        for item in array {
+            if !arrayWithUniqueElements.contains(item) {
+                arrayWithUniqueElements.append(item)
+            }
+        }
+        return arrayWithUniqueElements
+    }
+    
+    
+    
     // настройка pickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -113,7 +132,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         case pickerModel:
             return carModelsList.count
         default:
-            return carColorList.count
+            return removeDuplicateElements(array: carColorList).count
         }
     }
     
@@ -122,7 +141,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         case pickerModel:
             return carModelsList[row]
         default:
-            return carColorList[row]
+            return removeDuplicateElements(array: carColorList)[row]
         }
     }
     
@@ -131,7 +150,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         case pickerModel:
             carBrandTextField.text = carModelsList[row]
         default:
-            carColorTextField.text = carColorList[row]
+            carColorTextField.text = removeDuplicateElements(array: carColorList)[row]
         }
         
     }
@@ -191,15 +210,36 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     // сравниваем отфильтрованное авто с авто в списке
     private func compareCars(filteredCar: Car) {
-        
+        var helper: Int = 0
         for car in listOfCars {
             guard car.carModel == filteredCar.carModel else {continue}
+            if helper < 1 { helper = 1 }
             guard car.carColor == filteredCar.carColor else {continue}
+            if helper < 2 { helper = 2 }
             guard car.carEngine == filteredCar.carEngine else {continue}
+            if helper < 3 { helper = 3 }
             guard car.yearOfCarManufacture <= filteredCar.yearOfCarManufacture else {continue}
+            if helper < 4 { helper = 4 }
             guard car.carPrice <= filteredCar.carPrice else {continue}
             
             foundedCar = car
+        }
+        changeFilter = helper
+        
+    }
+    
+    private func helperInFilter(changeFilter: Int) -> String {
+        switch changeFilter {
+        case 0:
+            return "Модель"
+        case 1:
+            return "Цвет"
+        case 2:
+            return "Двигатель"
+        case 3:
+            return "Год выпуска"
+        default:
+            return "Цену"
         }
     }
     
@@ -220,18 +260,20 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
     }
     
-    private func showAlert() {
+    private func showAlert(filter: String) {
         if foundedCar != nil {
-            alertFilterCar(title: "Отлично!", message: "По вашему запросу авто найдено.\n Мы готовы его показать!")
+
+            alertFilterCar(title: "Отлично!", message: "По вашему запросу авто найдено")
             prepareButtonToSegue()
         } else {
-            alertFilterCar(title: "Ошибка!", message: "К сожалению, авто не найдено.\n Попробуйте изменить фильтры.")
+            alertFilterCar(title: "Ошибка", message: "Авто не найдено. Попробуйте изменить \(filter)")
+        }
+    }
+    private func prepareButtonToSegue() {
+            applyFilterButton.isHidden = true
+            showResultButton.isHidden = false
         }
     }
     
-    private func prepareButtonToSegue() {
-        applyFilterButton.isHidden = true
-        showResultButton.isHidden = false
-    }
-}
+
 
