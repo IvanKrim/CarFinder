@@ -20,9 +20,8 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var createOrderButton: UIButton!
     
     //MARK: - Public Properties
+    
     var car: Car!
-//    var delegate: ReserveVCDelegate! УДАЛИТЬ
-//    var customerContacts = "" УДАЛИТЬ
     
     //MARK: - Override methods
     override func viewDidLoad() {
@@ -43,11 +42,13 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - IB Actions
+    
     @IBAction func callMeButtonPressed() {
         showAlert()
     }
     
     //MARK: - Public methods
+    
     // добавляем метод для программирования кнопки return на клавиатуре
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == customerNameTF {
@@ -57,21 +58,15 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
-    
+
     //Функция, которая собирает заказанную машину для добавления в массив
     private func addNewCar() {
         let carInCart = Cart(carModel: car.carModel, carColor: car.carColor, carPrice: car.carPrice)
         DataManager.shared.reservedCarsInCart.append(carInCart)
     }
-    
-    
-    
-    
 }
 
-
-    //MARK: Alert Controller
+// Alert Controller
 extension ReserveViewController {
     
     // добавление AlertController
@@ -85,7 +80,6 @@ extension ReserveViewController {
         let okActionButton = UIAlertAction(title: "OK", style: .default) { dismissReserveVC in self.dismiss(animated: true, completion: nil) }
         alert.addAction(okActionButton)
         present(alert, animated: true)
-        
     }
     // вынесен за класс временно
     private func showAlert() {
@@ -94,7 +88,6 @@ extension ReserveViewController {
                 title: "Ошибка",
                 message: "Пожалуйста, укажите Имя и контактный номер телефона."
             )
-            
         } else {
             addNewCar()
             showAlertLogic(

@@ -7,15 +7,6 @@
 
 import UIKit
 
- //создаем протокол для класса УДАЛИТЬ
-//protocol ReserveVCDelegate {
-//    func printCustomerInfo(
-//        name: String,
-//        phoneNumber: String,
-//        selectedCar: String
-//    )
-//}
-
 class DetailViewController: UIViewController {
     
     //MARK: - IB Outlets
@@ -55,21 +46,11 @@ class DetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let reserveVC = segue.destination as? ReserveViewController {
             reserveVC.car = car
-//            reserveVC.delegate = self
+
         }
     }
 }
 
- //расширение, описывающее метод УДАЛИТЬ
-//extension DetailViewController: ReserveVCDelegate {
-//    func printCustomerInfo(
-//        name: String,
-//        phoneNumber: String,
-//        selectedCar: String
-//    ) {
-//        print("Покупатель \(name), телефон: \(phoneNumber) забронировал \(selectedCar)")
-//    }
-//}
 
 
 

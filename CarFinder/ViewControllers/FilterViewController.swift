@@ -102,7 +102,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
        
     }
     
-    // КНОПКА ПОКАЗАТЬ: должен быть переход на detailVC
+    // КНОПКА ПОКАЗАТЬ: переход на detailVC
     @IBAction func showResultButtonPressed() {
         
     }
@@ -152,7 +152,6 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         default:
             carColorTextField.text = removeDuplicateElements(array: carColorList)[row]
         }
-        
         
     }
     
@@ -263,6 +262,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     private func showAlert(filter: String) {
         if foundedCar != nil {
+
             alertFilterCar(title: "Отлично!", message: "По вашему запросу авто найдено")
             prepareButtonToSegue()
         } else {
