@@ -17,6 +17,8 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     private let carModelsList = DataManager.shared.carModels
     private let carColorList = DataManager.shared.carColors
+    
+    
     // временный инициализатор
     private let listOfCars = Car.getCarInfo()
     private var foundedCar: Car?
@@ -103,6 +105,20 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     //MARK: - Public Methods
+    
+    //убираем дубликаты из элементов массива
+    func removeDuplicateElements(array: [String]) -> [String] {
+        var arrayWithUniqueElements: [String] = []
+        for item in array {
+            if !arrayWithUniqueElements.contains(item) {
+                arrayWithUniqueElements.append(item)
+            }
+        }
+        return arrayWithUniqueElements
+    }
+    
+    
+    
     // настройка pickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -113,7 +129,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         case pickerModel:
             return carModelsList.count
         default:
-            return carColorList.count
+            return removeDuplicateElements(array: carColorList).count
         }
     }
     
@@ -122,7 +138,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         case pickerModel:
             return carModelsList[row]
         default:
-            return carColorList[row]
+            return removeDuplicateElements(array: carColorList)[row]
         }
     }
     
@@ -131,7 +147,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         case pickerModel:
             carBrandTextField.text = carModelsList[row]
         default:
-            carColorTextField.text = carColorList[row]
+            carColorTextField.text = removeDuplicateElements(array: carColorList)[row]
         }
         
         
