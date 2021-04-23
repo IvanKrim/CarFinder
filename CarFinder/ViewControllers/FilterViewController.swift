@@ -97,7 +97,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
        
     }
     
-    // КНОПКА ПОКАЗАТЬ: должен быть переход на detailVC
+    // КНОПКА ПОКАЗАТЬ: переход на detailVC
     @IBAction func showResultButtonPressed() {
         
     }
@@ -133,7 +133,6 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         default:
             carColorTextField.text = carColorList[row]
         }
-        
         
     }
     
@@ -223,10 +222,16 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     private func showAlert() {
         if foundedCar != nil {
-            alertFilterCar(title: "Отлично!", message: "По вашему запросу авто найдено")
+            alertFilterCar(title: "Отлично!", message: "По вашему запросу авто найдено.\n Мы готовы его показать!")
+            prepareButtonToSegue()
         } else {
-            alertFilterCar(title: "Ошибка", message: "Авто не найдено. Попробуйте изменить фильтры")
+            alertFilterCar(title: "Ошибка!", message: "К сожалению, авто не найдено.\n Попробуйте изменить фильтры.")
         }
+    }
+    
+    private func prepareButtonToSegue() {
+        applyFilterButton.isHidden = true
+        showResultButton.isHidden = false
     }
 }
 
