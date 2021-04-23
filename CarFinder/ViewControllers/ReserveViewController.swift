@@ -22,7 +22,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: - Public Properties
-    
     var car: Car!
     
     //MARK: - Override methods
@@ -30,11 +29,11 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         createOrderButton.layer.cornerRadius = 10
         addAnotherOrderButton.layer.cornerRadius = 10
+        view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
+        carModelLabel.text = car.fullVehicleInformation
         
         if DataManager.shared.reservedCarsInCart.count > 0 {
             detailLabel.text = "Пожалуйста, подтвердите добавление \(car.fullVehicleInformation) к существующему заказу"
-            
-            
             customerNameTF.isHidden = true
             customerPhoneTF.isHidden = true
             createOrderButton.isHidden = true
@@ -42,12 +41,7 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
         } else {
             addAnotherOrderButton.isHidden = true
         }
-        
-        
-        view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
-        
-        carModelLabel.text = car.fullVehicleInformation
-        
+
         customerNameTF.delegate = self
         customerPhoneTF.delegate = self
     }
@@ -59,7 +53,6 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: - IB Actions
-    
     @IBAction func callMeButtonPressed() {
         showAlert()
     }
@@ -84,8 +77,8 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
 
     //Функция, которая собирает заказанную машину для добавления в массив
     private func addNewCar() {
-        let carInCart = Cart(carModel: car.carModel, carColor: car.carColor, carPrice: car.carPrice)
-        DataManager.shared.reservedCarsInCart.append(carInCart)
+        let reservedCar = Cart(carModel: car.carModel, carColor: car.carColor, carPrice: car.carPrice)
+        DataManager.shared.reservedCarsInCart.append(reservedCar)
     }
 }
 
