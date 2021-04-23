@@ -17,6 +17,7 @@ class FindWindowTableViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.7496516109, green: 0.8531972766, blue: 0.9390820265, alpha: 1)
         
+        
         // количество предложений в navigation title
         navigationItem.title = "\(listOfCars.count) предложений"
     }
@@ -57,7 +58,7 @@ class FindWindowTableViewController: UITableViewController {
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         }
-    
+    //кнопка выхода из приложения
     @IBAction func exitButton(_ sender: UIBarButtonItem) {
         exit(0)
     }

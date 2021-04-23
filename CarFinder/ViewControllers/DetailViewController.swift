@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var yearOfCarManufactureLabel: UILabel!
     @IBOutlet weak var carColorLabel: UILabel!
     @IBOutlet weak var carEngineLabel: UILabel!
+    @IBOutlet weak var reserveButton: UIButton!
     
     
     
@@ -30,6 +31,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
+        reserveButton.layer.cornerRadius = 10
+        carPriceLabel.layer.cornerRadius = 5
+        carImageView.layer.cornerRadius = 10
         
         carModelLabel.text = car.fullVehicleInformation
         carPriceLabel.text = car.carPrice

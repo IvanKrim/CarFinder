@@ -28,6 +28,8 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        createOrderButton.layer.cornerRadius = 10
+        addAnotherOrderButton.layer.cornerRadius = 10
         
         if DataManager.shared.reservedCarsInCart.count > 0 {
             detailLabel.text = "Пожалуйста, подтвердите добавление \(car.fullVehicleInformation) к существующему заказу"

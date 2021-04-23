@@ -76,6 +76,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zbk-0P-Rl2"/>
+                    <connections>
+                        <outlet property="needAutoButton" destination="vIi-F1-66A" id="wvK-v6-eaa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -376,7 +379,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цена модели" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-MJ-dxy">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="цена модели" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYf-MJ-dxy">
                                         <rect key="frame" x="0.0" y="30" width="288" height="25"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
@@ -503,6 +506,7 @@
                         <outlet property="carImageView" destination="1v3-Ji-ZUl" id="Oib-IG-auj"/>
                         <outlet property="carModelLabel" destination="zkZ-7l-GNu" id="Wfp-zl-buq"/>
                         <outlet property="carPriceLabel" destination="lYf-MJ-dxy" id="fM5-sg-XVP"/>
+                        <outlet property="reserveButton" destination="CUU-7j-iVt" id="epP-u4-GJO"/>
                         <outlet property="yearOfCarManufactureLabel" destination="aYN-fa-Y6N" id="2on-y8-nvk"/>
                     </connections>
                 </viewController>
@@ -577,7 +581,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-gy-aEo">
                                 <rect key="frame" x="16" y="443" width="288" height="45"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" red="0.88901847599999995" green="0.96813887359999995" blue="0.99994319679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="8Tc-AZ-UiE"/>
                                 </constraints>
@@ -731,9 +735,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="19n-qC-wgU"/>
+        <segue reference="0WI-tv-bsr"/>
         <segue reference="47c-DT-9Mo"/>
-        <segue reference="e60-Ic-m0l"/>
+        <segue reference="ye0-yR-FOG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SearchIMG" width="741" height="741"/>
@@ -748,9 +752,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
