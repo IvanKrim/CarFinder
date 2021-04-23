@@ -336,6 +336,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="N предложений" id="eiv-cJ-IIJ">
+                        <barButtonItem key="leftBarButtonItem" title="Exit" image="togglepower" catalog="system" id="vvg-vj-Zq9">
+                            <connections>
+                                <action selector="exitButton:" destination="AMc-fA-76u" id="X32-Qs-LrE"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="search" id="bZk-Iz-7bJ">
                                 <connections>
@@ -359,11 +364,11 @@
             <objects>
                 <viewController id="5qF-uo-pFj" customClass="DetailViewController" customModule="CarFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0nG-bF-MaI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aQx-or-a8K">
-                                <rect key="frame" x="16" y="16" width="288" height="55"/>
+                                <rect key="frame" x="16" y="60" width="288" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="название и год модели" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkZ-7l-GNu">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
@@ -384,9 +389,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUU-7j-iVt">
-
-                                <rect key="frame" x="16" y="473" width="288" height="45"/>
-
+                                <rect key="frame" x="16" y="503" width="288" height="45"/>
                                 <color key="backgroundColor" red="0.89182609319999995" green="0.96845239400000005" blue="0.99787062410000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="eB8-Wr-ALo"/>
@@ -397,21 +400,19 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1v3-Ji-ZUl">
-                                <rect key="frame" x="16" y="87" width="288" height="216"/>
+                                <rect key="frame" x="16" y="131" width="288" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1v3-Ji-ZUl" secondAttribute="height" multiplier="4:3" id="K6J-0Z-nqc"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Характеристики" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXG-Rl-DGW">
-                                <rect key="frame" x="16" y="319" width="288" height="24"/>
+                                <rect key="frame" x="16" y="363" width="288" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AXh-gM-PwI">
-
-                                <rect key="frame" x="16" y="359" width="288" height="74"/>
-
+                                <rect key="frame" x="16" y="397" width="288" height="74"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-qA-4S0">
                                         <rect key="frame" x="0.0" y="0.0" width="144" height="74"/>
@@ -574,12 +575,24 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVC-gy-aEo">
+                                <rect key="frame" x="16" y="443" width="288" height="45"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="8Tc-AZ-UiE"/>
+                                </constraints>
+                                <state key="normal" title="Добавить автомобиль к заказу"/>
+                                <connections>
+                                    <action selector="addAnotherButtonPressed" destination="Q0k-he-T6V" eventType="touchUpInside" id="7mE-S5-aTv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VyF-uR-3F2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Gp5-d4-ZIj" secondAttribute="trailing" constant="16" id="3aE-nP-SFP"/>
                             <constraint firstItem="uxh-eG-gSS" firstAttribute="top" secondItem="VyF-uR-3F2" secondAttribute="top" constant="25" id="77y-ZG-JlX"/>
+                            <constraint firstItem="VyF-uR-3F2" firstAttribute="bottom" secondItem="XVC-gy-aEo" secondAttribute="bottom" constant="60" id="7FR-K5-fh9"/>
                             <constraint firstItem="Gp5-d4-ZIj" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="8GW-7a-rOX"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="bottom" secondItem="Qnd-FX-u0C" secondAttribute="bottom" constant="60" id="8t6-TU-xTb"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="Qnd-FX-u0C" secondAttribute="trailing" constant="16" id="Cqr-aR-twV"/>
@@ -587,12 +600,15 @@
                             <constraint firstItem="uxh-eG-gSS" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="OGL-6d-mM4"/>
                             <constraint firstItem="siT-2I-Jqg" firstAttribute="top" secondItem="Gp5-d4-ZIj" secondAttribute="bottom" constant="30" id="OMV-3g-cDE"/>
                             <constraint firstItem="Gp5-d4-ZIj" firstAttribute="top" secondItem="uxh-eG-gSS" secondAttribute="bottom" constant="30" id="PZI-f3-Wjp"/>
+                            <constraint firstItem="XVC-gy-aEo" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="T5t-a6-Gr7"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="siT-2I-Jqg" secondAttribute="trailing" constant="16" id="ZhU-TW-AGx"/>
+                            <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="XVC-gy-aEo" secondAttribute="trailing" constant="16" id="geE-KQ-y73"/>
                             <constraint firstItem="Qnd-FX-u0C" firstAttribute="leading" secondItem="VyF-uR-3F2" secondAttribute="leading" constant="16" id="gtb-aZ-lfN"/>
                             <constraint firstItem="VyF-uR-3F2" firstAttribute="trailing" secondItem="uxh-eG-gSS" secondAttribute="trailing" constant="16" id="sp3-So-Ame"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAnotherOrderButton" destination="XVC-gy-aEo" id="nOf-uP-6Ra"/>
                         <outlet property="carModelLabel" destination="F2s-cg-4zO" id="jOB-2w-RhC"/>
                         <outlet property="createOrderButton" destination="Qnd-FX-u0C" id="LLq-aw-U93"/>
                         <outlet property="customerNameTF" destination="OMl-RY-bib" id="U7K-qE-YvY"/>
@@ -716,15 +732,14 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="19n-qC-wgU"/>
-
-        <segue reference="RzQ-Zf-7wg"/>
-
+        <segue reference="47c-DT-9Mo"/>
         <segue reference="e60-Ic-m0l"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SearchIMG" width="741" height="741"/>
         <image name="arrow.uturn.backward.circle" catalog="system" width="128" height="121"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="togglepower" catalog="system" width="128" height="121"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -733,6 +748,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

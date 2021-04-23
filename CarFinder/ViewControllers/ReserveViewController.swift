@@ -18,6 +18,8 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var customerPhoneTF: UITextField!
     
     @IBOutlet weak var createOrderButton: UIButton!
+    @IBOutlet weak var addAnotherOrderButton: UIButton!
+    
     
     //MARK: - Public Properties
     
@@ -26,6 +28,19 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if DataManager.shared.reservedCarsInCart.count > 0 {
+            detailLabel.text = "Пожалуйста, подтвердите добавление \(car.fullVehicleInformation) к существующему заказу"
+            
+            
+            customerNameTF.isHidden = true
+            customerPhoneTF.isHidden = true
+            createOrderButton.isHidden = true
+            addAnotherOrderButton.isHidden = false
+        } else {
+            addAnotherOrderButton.isHidden = true
+        }
+        
         
         view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
         
@@ -46,6 +61,12 @@ class ReserveViewController: UIViewController, UITextFieldDelegate {
     @IBAction func callMeButtonPressed() {
         showAlert()
     }
+    
+    @IBAction func addAnotherButtonPressed() {
+        addNewCar()
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     //MARK: - Public methods
     

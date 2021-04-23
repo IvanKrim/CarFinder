@@ -58,4 +58,8 @@ class FindWindowTableViewController: UITableViewController {
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         }
     
+    @IBAction func exitButton(_ sender: UIBarButtonItem) {
+        exit(0)
+    }
+    
 }
