@@ -10,8 +10,8 @@ import UIKit
 class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     //MARK: - Public Properties
-    // не работает переход по сегвею с кнопки, разобраться
-    //    var listOfCars: [Car]!
+    
+    var listOfCars: [Car]!
     
     //MARK: - Private properties
     
@@ -20,8 +20,6 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     private var changeFilter: Int = 0
     
-    // временный инициализатор
-    private let listOfCars = Car.getCarInfo()
     private var foundedCar: Car?
     
     //MARK: - IB Outlets
