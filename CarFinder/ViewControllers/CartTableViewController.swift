@@ -53,8 +53,9 @@ class CartTableViewController: UITableViewController {
         
         DataManager.shared.reservedCarsInCart.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
+        if DataManager.shared.reservedCarsInCart.count == 0 {
         title = "Заказов нет"
-        
+        }
     }
     
 }
