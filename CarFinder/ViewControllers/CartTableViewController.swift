@@ -14,7 +14,7 @@ class CartTableViewController: UITableViewController {
     //MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.1002440825, green: 0.3540708423, blue: 0.5133894682, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.07241869718, green: 0.2375045419, blue: 0.3554243445, alpha: 1)
         tableView.separatorColor = #colorLiteral(red: 0, green: 0.7984993458, blue: 0.2820848227, alpha: 1)
         //добавляем кнопку редактирования табличного содержимого и настраиваем его внешний вид (метод из коробки)
         navigationItem.rightBarButtonItem = editButtonItem
