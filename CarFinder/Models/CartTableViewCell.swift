@@ -8,7 +8,7 @@
 import UIKit
 
 class CartTableViewCell: UITableViewCell {
-
+    
     //MARK: IB Outlets
     //аутлеты для лэйблов внутри ячейки
     @IBOutlet weak var nameYearLabel: UILabel!
