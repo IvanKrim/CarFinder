@@ -10,8 +10,8 @@ import UIKit
 class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     //MARK: - Public Properties
-    // не работает переход по сегвею с кнопки, разобраться
-    //    var listOfCars: [Car]!
+    
+    var listOfCars: [Car]!
     
     //MARK: - Private properties
     
@@ -20,8 +20,6 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     private var changeFilter: Int = 0
     
-    // временный инициализатор
-    private let listOfCars = Car.getCarInfo()
     private var foundedCar: Car?
     
     //MARK: - IB Outlets
@@ -49,6 +47,9 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 0.7420367002, green: 0.8531787992, blue: 0.9378988743, alpha: 1)
+        
+        applyFilterButton.layer.cornerRadius = applyFilterButton.frame.height / 5
+        showResultButton.layer.cornerRadius = showResultButton.frame.height / 5
 
         carBrandTextField.inputView = pickerModel
         carColorTextField.inputView = pickerColor
@@ -58,7 +59,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         // при загрузке экрана значения слайдеров в лейблах
         carYearLabel.text = String(Int(carYearSlider.value))
-        carPriceLabel.text = String(Int(carPriceSlider.value))
+        carPriceLabel.text = String(Int(carPriceSlider.value)) + " руб."
         
         // прячем кнопку Показать
         showResultButton.isHidden = true
@@ -89,7 +90,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         // округляем значения слайдера для лейбла
         let step: Float = 100000
         let currentSliderValue = round(carPriceSlider.value / step) * step
-        carPriceLabel.text = String(Int(currentSliderValue))
+        carPriceLabel.text = String(Int(currentSliderValue)) + " руб."
     }
     
     // КНОПКА ПРИМЕНИТЬ: применяем фильтр к списку авто
@@ -98,8 +99,6 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         compareCars(filteredCar: getFilteredCar())
         
         showAlert(filter: helperInFilter(changeFilter: changeFilter))
-        
-       
     }
     
     // КНОПКА ПОКАЗАТЬ: переход на detailVC
