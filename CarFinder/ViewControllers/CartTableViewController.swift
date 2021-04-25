@@ -20,17 +20,17 @@ class CartTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = editButtonItem
         //функция смены заголовка, если в корзине нет заказов (вынесена ниже в экстеншен)
         changeTitle()
-
+        
         
     }
-  
+    
     
     @IBAction func backBarButtonItemTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     
-
+    
     // MARK: - Table view data source
     //настраиваем количество ячеек в таблице
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,7 +48,7 @@ class CartTableViewController: UITableViewController {
         
         // вызываем функцию из класса ячейки с типом данных нашего элемента car
         cell.cellSetup(object: car)
-            
+        
         return cell
     }
     
@@ -58,9 +58,7 @@ class CartTableViewController: UITableViewController {
         
         DataManager.shared.reservedCarsInCart.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
-        if DataManager.shared.reservedCarsInCart.count == 0 {
-        title = "Заказов нет"
-        }
+        changeTitle()
     }
     
 }
@@ -69,13 +67,13 @@ class CartTableViewController: UITableViewController {
 //меняем заголовок в корзине, если в ней нет заказов
 extension CartTableViewController {
     func changeTitle() {
-    if DataManager.shared.reservedCarsInCart.count == 1 {
-        title = "Ваш заказ"
-    } else if DataManager.shared.reservedCarsInCart.count > 1 {
-        title = "Ваши заказы"
-    } else {
-        title = "Заказов нет"
-        
-    }
+        if DataManager.shared.reservedCarsInCart.count == 1 {
+            title = "Ваш заказ"
+        } else if DataManager.shared.reservedCarsInCart.count > 1 {
+            title = "Ваши заказы"
+        } else {
+            title = "Заказов нет"
+            
         }
+    }
 }
