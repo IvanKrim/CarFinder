@@ -7,14 +7,6 @@
 
 import UIKit
 
-// создаем протокол для класса
-protocol ReserveVCDelegate {
-    func printCustomerInfo(
-        name: String,
-        phoneNumber: String,
-        selectedCar: String)
-}
-
 class DetailViewController: UIViewController {
     
     //MARK: - IB Outlets
@@ -26,6 +18,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var yearOfCarManufactureLabel: UILabel!
     @IBOutlet weak var carColorLabel: UILabel!
     @IBOutlet weak var carEngineLabel: UILabel!
+    @IBOutlet weak var reserveButton: UIButton!
+    
     
     
     //MARK: - Public Properties
@@ -36,7 +30,11 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+        
+        view.backgroundColor = #colorLiteral(red: 0.05896552652, green: 0.1820276678, blue: 0.2491934597, alpha: 1)
+        reserveButton.layer.cornerRadius = 10
+        carPriceLabel.layer.cornerRadius = 5
+        carImageView.layer.cornerRadius = 10
         
         carModelLabel.text = car.fullVehicleInformation
         carPriceLabel.text = car.carPrice
@@ -53,20 +51,12 @@ class DetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let reserveVC = segue.destination as? ReserveViewController {
             reserveVC.car = car
-            reserveVC.delegate = self
+
         }
     }
 }
 
-// расширение, описывающее метод
-extension DetailViewController: ReserveVCDelegate {
-    func printCustomerInfo(
-        name: String,
-        phoneNumber: String,
-        selectedCar: String
-    ) {
-        print("Покупатель \(name), телефон: \(phoneNumber) забронировал \(selectedCar)"
-        )
-    }
 
-}
+
+
+

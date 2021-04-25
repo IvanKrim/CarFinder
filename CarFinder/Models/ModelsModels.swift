@@ -10,7 +10,7 @@ struct Car {
     // основные свойства
     let carModel: String
     let carColor: String
-    let carEngine: String
+    var carEngine: String
     let yearOfCarManufacture: String
     let carPrice: String
     
@@ -28,13 +28,23 @@ struct Car {
         // иначе инициализатор надо переделать
         for index in 0..<DataManager.shared.carModels.count {
             
-            let car = Car(
+            var car = Car(
                 carModel: DataManager.shared.carModels[index],
                 carColor: DataManager.shared.carColors[index],
-                carEngine: DataManager.shared.carEngines.randomElement() ?? "",
+                carEngine: "",
                 yearOfCarManufacture: DataManager.shared.yearsOfCarManufacture[index],
                 carPrice: DataManager.shared.carPrices[index]
             )
+            
+            // выбираем тип двигателя от марки авто
+            switch car.carModel {
+            case "Audi A4", "Mazda 6", "Mazda CX-9", "Ford Mustang":
+                car.carEngine = "Бензин"
+            case "BMW 3", "Mercedes-Benz E-class":
+                car.carEngine = "Дизель"
+            default:
+                car.carEngine = "Электро"
+            }
             
             listOfCars.append(car)
         }
@@ -42,3 +52,12 @@ struct Car {
     }
 }
 
+
+//модель для корзины
+struct Cart {
+    
+    let carModel: String
+    let carColor: String
+    let carPrice: String
+    
+}

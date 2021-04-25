@@ -10,18 +10,16 @@ import UIKit
 class FindWindowTableViewController: UITableViewController {
     
     //MARK: - Public Properties
-    
     var listOfCars: [Car]!
 
     //MARK: - Override Methods
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.7496516109, green: 0.8531972766, blue: 0.9390820265, alpha: 1)
-        
+        view.backgroundColor = #colorLiteral(red: 0.05896552652, green: 0.1820276678, blue: 0.2491934597, alpha: 1)
+        tableView.separatorColor = #colorLiteral(red: 0, green: 0.7984993458, blue: 0.2820848227, alpha: 1)
+
         // количество предложений в navigation title
         navigationItem.title = "\(listOfCars.count) предложений"
-         
     }
 
     // MARK: - Table view data source
@@ -41,7 +39,7 @@ class FindWindowTableViewController: UITableViewController {
         
         // вызываем функцию из класса ячейки с типом данных нашего элемента car
         cell.cellSetup(object: car)
-        
+    
         return cell
     }
     
@@ -56,6 +54,16 @@ class FindWindowTableViewController: UITableViewController {
             //передаем значение из массива по индексу строки в переменную 
             detailVC.car = listOfCars[indexPath.row]
         }
+        if let filterVC = segue.destination as? FilterViewController {
+            filterVC.listOfCars = listOfCars
+        }
     }
-
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        }
+    //кнопка выхода из приложения
+    @IBAction func exitButton(_ sender: UIBarButtonItem) {
+        exit(0)
+    }
+    
 }
