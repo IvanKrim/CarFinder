@@ -46,7 +46,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 0.7420367002, green: 0.8531787992, blue: 0.9378988743, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.05896552652, green: 0.1820276678, blue: 0.2491934597, alpha: 1)
         
         applyFilterButton.layer.cornerRadius = applyFilterButton.frame.height / 5
         showResultButton.layer.cornerRadius = showResultButton.frame.height / 5

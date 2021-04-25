@@ -9,23 +9,28 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
     
+    
+    
     //MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.07241869718, green: 0.2375045419, blue: 0.3554243445, alpha: 1)
+        tableView.separatorColor = #colorLiteral(red: 0, green: 0.7984993458, blue: 0.2820848227, alpha: 1)
         //добавляем кнопку редактирования табличного содержимого и настраиваем его внешний вид (метод из коробки)
         navigationItem.rightBarButtonItem = editButtonItem
         //функция смены заголовка, если в корзине нет заказов (вынесена ниже в экстеншен)
         changeTitle()
+        
+        
     }
-  
+    
     
     @IBAction func backBarButtonItemTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     
-
+    
     // MARK: - Table view data source
     //настраиваем количество ячеек в таблице
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,7 +48,7 @@ class CartTableViewController: UITableViewController {
         
         // вызываем функцию из класса ячейки с типом данных нашего элемента car
         cell.cellSetup(object: car)
-            
+        
         return cell
     }
     
@@ -53,8 +58,7 @@ class CartTableViewController: UITableViewController {
         
         DataManager.shared.reservedCarsInCart.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
-        title = "Заказов нет"
-        
+        changeTitle()
     }
     
 }
@@ -63,13 +67,13 @@ class CartTableViewController: UITableViewController {
 //меняем заголовок в корзине, если в ней нет заказов
 extension CartTableViewController {
     func changeTitle() {
-    if DataManager.shared.reservedCarsInCart.count == 1 {
-        title = "Ваш заказ"
-    } else if DataManager.shared.reservedCarsInCart.count > 1 {
-        title = "Ваши заказы"
-    } else {
-        title = "Заказов нет"
-        
-    }
+        if DataManager.shared.reservedCarsInCart.count == 1 {
+            title = "Ваш заказ"
+        } else if DataManager.shared.reservedCarsInCart.count > 1 {
+            title = "Ваши заказы"
+        } else {
+            title = "Заказов нет"
+            
         }
+    }
 }

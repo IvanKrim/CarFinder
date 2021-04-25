@@ -30,7 +30,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.7470981479, green: 0.8530337214, blue: 0.9378386736, alpha: 1)
+        
+        view.backgroundColor = #colorLiteral(red: 0.05896552652, green: 0.1820276678, blue: 0.2491934597, alpha: 1)
         reserveButton.layer.cornerRadius = 10
         carPriceLabel.layer.cornerRadius = 5
         carImageView.layer.cornerRadius = 10
@@ -54,6 +55,7 @@ class DetailViewController: UIViewController {
         }
     }
 }
+
 
 
 
