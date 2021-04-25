@@ -9,27 +9,21 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
     
-    
-    
     //MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.07241869718, green: 0.2375045419, blue: 0.3554243445, alpha: 1)
         tableView.separatorColor = #colorLiteral(red: 0, green: 0.7984993458, blue: 0.2820848227, alpha: 1)
+        
+        changeTitle()
         //добавляем кнопку редактирования табличного содержимого и настраиваем его внешний вид (метод из коробки)
         navigationItem.rightBarButtonItem = editButtonItem
-        //функция смены заголовка, если в корзине нет заказов (вынесена ниже в экстеншен)
-        changeTitle()
-        
-        
     }
     
-    
+    //MARK: IB Actions
     @IBAction func backBarButtonItemTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
     
     // MARK: - Table view data source
     //настраиваем количество ячеек в таблице
@@ -63,7 +57,6 @@ class CartTableViewController: UITableViewController {
     
 }
 
-
 //меняем заголовок в корзине, если в ней нет заказов
 extension CartTableViewController {
     func changeTitle() {
@@ -71,9 +64,9 @@ extension CartTableViewController {
             title = "Ваш заказ"
         } else if DataManager.shared.reservedCarsInCart.count > 1 {
             title = "Ваши заказы"
-        } else {
+        }
+        else {
             title = "Заказов нет"
-            
         }
     }
 }
