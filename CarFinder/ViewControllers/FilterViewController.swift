@@ -11,7 +11,7 @@ class FilterViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //MARK: - Public Properties
     
-    var listOfCars: [Car]!
+    var listOfCars = Car.getCarInfo()
     
     //MARK: - Private properties
     

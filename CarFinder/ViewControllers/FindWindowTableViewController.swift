@@ -54,9 +54,6 @@ class FindWindowTableViewController: UITableViewController {
             //передаем значение из массива по индексу строки в переменную 
             detailVC.car = listOfCars[indexPath.row]
         }
-        if let filterVC = segue.destination as? FilterViewController {
-            filterVC.listOfCars = listOfCars
-        }
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
